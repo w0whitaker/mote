@@ -2,7 +2,7 @@
 
 <template>
   <main>
-    <h1>mote.</h1>
+    <h1>mote</h1>
     <ul>
       <li>hi</li>
     </ul>

@@ -1,0 +1,7 @@
+@import 'global/reset.css';
+@import 'global/variables.css';
+@import 'global/typography.css';
+
+body {
+	background-color: hotpink;
+}
