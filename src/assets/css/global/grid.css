@@ -1,10 +1,20 @@
-.u-container {
+/* @link https://utopia.fyi/grid/calculator?c=316,16,1.5,1116,18,1.5,5,2,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l&g=s,l,xl,12 */
+
+.m-container {
   max-width: var(--grid-max-width);
   padding-inline: var(--grid-gutter);
   margin-inline: auto;
 }
 
-.u-grid {
+.m-grid {
   display: grid;
   gap: var(--grid-gutter);
+}
+
+.m-grid--side-by-side {
+	grid-template-columns: 1fr 1fr;
+}
+
+header {
+	width: 100%;
 }

@@ -1,7 +1,10 @@
 @import 'global/reset.css';
 @import 'global/variables.css';
 @import 'global/typography.css';
+@import 'global/grid.css';
 
-body {
+.show-me {
 	background-color: hotpink;
+	opacity: 0.5;
+	z-index: 999;
 }
