@@ -7,9 +7,8 @@ module.exports = {
 		'eslint:recommended',
 		'@vue/eslint-config-prettier',
 		'plugin:storybook/recommended',
-		'prettier'
 	],
 	parserOptions: {
-		ecmaVersion: 'latest'
-	}
+		ecmaVersion: 'latest',
+	},
 };
