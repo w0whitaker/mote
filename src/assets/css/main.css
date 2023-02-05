@@ -1,5 +1,6 @@
 @import 'global/reset.css';
 @import 'global/variables.css';
+@import 'global/axioms.css';
 @import 'global/typography.css';
 @import 'global/grid.css';
 
@@ -7,8 +8,4 @@
 	background-color: hotpink;
 	opacity: 0.5;
 	z-index: 999;
-}
-
-.constrained {
-	max-width: min-content;
 }
