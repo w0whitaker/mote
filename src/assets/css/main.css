@@ -8,3 +8,7 @@
 	opacity: 0.5;
 	z-index: 999;
 }
+
+.constrained {
+	max-width: min-content;
+}
