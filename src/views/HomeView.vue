@@ -16,7 +16,7 @@ import Paragraph from "../content/paragraph.js";
             <MoteStack>
               <template v-slot:elements>
                 <h2>Boxes</h2>
-                <div class="m-grid m-grid--side-by-side">
+                <div class="m-grid">
                   <!-- small padding -->
                   <section>
                     <MoteBox>
