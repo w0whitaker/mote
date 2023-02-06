@@ -32,4 +32,3 @@ coverage
 
 # Temporarily ignore during development
 src/assets/logo
-src/components/icons
