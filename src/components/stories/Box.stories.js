@@ -5,7 +5,6 @@ import Titans from './titans.js';
 export default {
 	title: 'Box',
 	component: MoteBox,
-	// More on argTypes: https://storybook.js.org/docs/vue/api/argtypes
 };
 
 // More on component templates: https://storybook.js.org/docs/vue/writing-stories/introduction#using-args
@@ -18,7 +17,7 @@ const Template = (args) => ({
 	},
 	// And then the `args` are bound to your component with `v-bind="args"`
 	template: `
-		<mote-box v-bind="args">
+		<mote-box v-bind="args" :message="ohai">
 			<template v-slot:content>
 				<div v-if="args.content" v-html="args.content" />
 			</template>
