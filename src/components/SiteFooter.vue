@@ -5,6 +5,7 @@
     <div class="m-container">
       <div class="flex-container">
         <p>mote</p>
+        <a href="https://github.com/w0whitaker/mote">github</a>
       </div>
     </div>
   </footer>
@@ -18,9 +19,5 @@ footer {
 
 p {
   font-size: var(--step-3);
-}
-s.flex-container {
-  display: flex;
-  align-items: center;
 }
 </style>
