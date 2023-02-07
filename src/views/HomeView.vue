@@ -3,6 +3,7 @@ import SiteHeader from "../components/SiteHeader.vue";
 import SiteFooter from "../components/SiteFooter.vue";
 import MoteStack from "../components/MoteStack.vue";
 import MoteBox from "../components/MoteBox.vue";
+import MoteButton from "../components/MoteButton.vue";
 import Paragraph from "../content/paragraph.js";
 </script>
 
@@ -106,6 +107,39 @@ import Paragraph from "../content/paragraph.js";
                             </MoteBox>
                           </template>
                         </MoteStack>
+                      </template>
+                    </MoteBox>
+                  </section>
+                </div>
+              </template>
+            </MoteStack>
+          </article>
+          <article>
+            <MoteStack>
+              <template v-slot:elements>
+                <h2>Buttons</h2>
+                <div class="m-grid m-grid--side-by-side">
+                  <section>
+                    <h3>Default</h3>
+                    <MoteBox class="medium-pad">
+                      <template v-slot:content>
+                        <MoteButton class="mote-button--default"></MoteButton>
+                      </template>
+                    </MoteBox>
+                  </section>
+                  <section>
+                    <h3>Outlined</h3>
+                    <MoteBox class="medium-pad">
+                      <template v-slot:content>
+                        <MoteButton class="mote-button--outlined"></MoteButton>
+                      </template>
+                    </MoteBox>
+                  </section>
+                  <section>
+                    <h3>Clear</h3>
+                    <MoteBox class="medium-pad">
+                      <template v-slot:content>
+                        <MoteButton class="mote-button--clear"></MoteButton>
                       </template>
                     </MoteBox>
                   </section>
