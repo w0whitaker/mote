@@ -15,6 +15,22 @@
 	grid-template-columns: 1fr 1fr;
 }
 
-header {
-	width: 100%;
+.flex-container {
+  display: flex;
+  flex-wrap: wrap;
+  margin: -1rem;
+}
+
+.flex-container > * {
+  height: 20vh;
+  color: #fff;
+  background-color: #000;
+  flex-grow: 1;
+  flex-basis: calc((40rem - 100%) * 999);
+  margin: 1rem;
+}
+
+.flex-container > :nth-last-child(n+5),
+.flex-container > :nth-last-child(n+5) ~ * {
+  flex-basis: 100%;
 }

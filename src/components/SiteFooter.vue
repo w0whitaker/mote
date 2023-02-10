@@ -3,10 +3,8 @@
 <template>
   <footer>
     <div class="m-container">
-      <div class="flex-container">
-        <p>mote</p>
-        <a href="https://github.com/w0whitaker/mote">github</a>
-      </div>
+      <p>mote</p>
+      <a href="https://github.com/w0whitaker/mote">github</a>
     </div>
   </footer>
 </template>
