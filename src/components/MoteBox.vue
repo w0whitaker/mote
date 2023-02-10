@@ -1,6 +1,17 @@
-<script></script>
+<script>
+export default {
+  props: {
+    padding: String,
+  },
+  data() {
+    return {
+      className: `mote-box--${this.padding}`,
+    };
+  },
+};
+</script>
 <template>
-  <div class="mote-box">
+  <div :class="['mote-box', className]">
     <slot name="content" />
   </div>
 </template>
@@ -18,19 +29,23 @@
   filter: invert(100%);
 }
 
-.small-pad {
+.mote-box--none {
+  padding: 0;
+}
+
+.mote-box--narrow {
   padding: var(--space-s);
 }
 
-.medium-pad {
+.mote-box--normal {
   padding: var(--space-m);
 }
 
-.large-pad {
+.mote-box--wide {
   padding: var(--space-l);
 }
 
-.jumbo-pad {
+.mote-box--jumbo {
   padding: var(--space-2xl);
 }
 </style>

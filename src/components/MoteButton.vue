@@ -1,6 +1,17 @@
-<script></script>
+<script>
+export default {
+  props: {
+    variant: String,
+  },
+  data() {
+    return {
+      className: `mote-button--${this.variant}`,
+    };
+  },
+};
+</script>
 <template>
-  <button>Button</button>
+  <button :class="className">button</button>
 </template>
 <style scoped>
 button {
