@@ -20,18 +20,18 @@ import Paragraph from "../content/paragraph.js";
                 <div class="m-grid">
                   <!-- small padding -->
                   <section>
-                    <MoteBox>
+                    <MoteBox padding="none">
                       <template v-slot:content>
                         <MoteStack>
                           <template v-slot:elements>
-                            <MoteBox class="invert small-pad">
+                            <MoteBox class="invert" padding="narrow">
                               <template v-slot:content>
                                 <header>
                                   <h3>small</h3>
                                 </header>
                               </template>
                             </MoteBox>
-                            <MoteBox class="small-pad">
+                            <MoteBox padding="narrow">
                               <template v-slot:content>
                                 <p v-html="Paragraph.template"></p>
                               </template>
@@ -43,18 +43,18 @@ import Paragraph from "../content/paragraph.js";
                   </section>
                   <!-- medium padding -->
                   <section>
-                    <MoteBox>
+                    <MoteBox padding="none">
                       <template v-slot:content>
                         <MoteStack>
                           <template v-slot:elements>
-                            <MoteBox class="invert medium-pad">
+                            <MoteBox class="invert" padding="normal">
                               <template v-slot:content>
                                 <header>
                                   <h3>medium</h3>
                                 </header>
                               </template>
                             </MoteBox>
-                            <MoteBox class="medium-pad">
+                            <MoteBox padding="normal">
                               <template v-slot:content>
                                 <p v-html="Paragraph.template"></p>
                               </template>
@@ -66,18 +66,18 @@ import Paragraph from "../content/paragraph.js";
                   </section>
                   <!-- large padding -->
                   <section>
-                    <MoteBox>
+                    <MoteBox padding="none">
                       <template v-slot:content>
                         <MoteStack>
                           <template v-slot:elements>
-                            <MoteBox class="invert large-pad">
+                            <MoteBox class="invert" padding="wide">
                               <template v-slot:content>
                                 <header>
                                   <h3>large</h3>
                                 </header>
                               </template>
                             </MoteBox>
-                            <MoteBox class="large-pad">
+                            <MoteBox padding="wide">
                               <template v-slot:content>
                                 <p v-html="Paragraph.template"></p>
                               </template>
@@ -89,18 +89,18 @@ import Paragraph from "../content/paragraph.js";
                   </section>
                   <!-- jumbo padding -->
                   <section>
-                    <MoteBox>
+                    <MoteBox padding="none">
                       <template v-slot:content>
                         <MoteStack>
                           <template v-slot:elements>
-                            <MoteBox class="invert jumbo-pad">
+                            <MoteBox class="invert" padding="jumbo">
                               <template v-slot:content>
                                 <header>
                                   <h3>jumbo</h3>
                                 </header>
                               </template>
                             </MoteBox>
-                            <MoteBox class="jumbo-pad">
+                            <MoteBox padding="jumbo">
                               <template v-slot:content>
                                 <p v-html="Paragraph.template"></p>
                               </template>
@@ -118,7 +118,7 @@ import Paragraph from "../content/paragraph.js";
             <MoteStack>
               <template v-slot:elements>
                 <h2>Buttons</h2>
-                <div class="m-grid m-grid--side-by-side">
+                <div class="m-grid">
                   <section>
                     <h3>Default</h3>
                     <MoteBox class="medium-pad">
