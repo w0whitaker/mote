@@ -8,22 +8,22 @@ import Paragraph from "../content/paragraph.js";
 </script>
 
 <template>
-  <MoteStack>
-    <template v-slot:elements>
+  <MoteBox padding="none">
+    <template v-slot:content>
       <SiteHeader />
-      <div class="m-container">
-        <main>
-          <article>
-            <MoteStack>
-              <template v-slot:elements>
-                <h2>Boxes</h2>
-                <div class="m-grid">
-                  <!-- small padding -->
-                  <section>
-                    <MoteBox padding="none">
-                      <template v-slot:content>
-                        <MoteStack>
-                          <template v-slot:elements>
+      <main>
+        <MoteBox padding="jumbo">
+          <template v-slot:content>
+            <MoteBox padding="normal">
+              <template v-slot:content>
+                <article>
+                  <h2>Boxes</h2>
+                  <MoteStack>
+                    <template v-slot:elements>
+                      <!-- small padding -->
+                      <section>
+                        <MoteBox padding="none">
+                          <template v-slot:content>
                             <MoteBox class="invert" padding="narrow">
                               <template v-slot:content>
                                 <header>
@@ -37,16 +37,12 @@ import Paragraph from "../content/paragraph.js";
                               </template>
                             </MoteBox>
                           </template>
-                        </MoteStack>
-                      </template>
-                    </MoteBox>
-                  </section>
-                  <!-- medium padding -->
-                  <section>
-                    <MoteBox padding="none">
-                      <template v-slot:content>
-                        <MoteStack>
-                          <template v-slot:elements>
+                        </MoteBox>
+                      </section>
+                      <!-- medium padding -->
+                      <section>
+                        <MoteBox padding="none">
+                          <template v-slot:content>
                             <MoteBox class="invert" padding="normal">
                               <template v-slot:content>
                                 <header>
@@ -60,16 +56,12 @@ import Paragraph from "../content/paragraph.js";
                               </template>
                             </MoteBox>
                           </template>
-                        </MoteStack>
-                      </template>
-                    </MoteBox>
-                  </section>
-                  <!-- large padding -->
-                  <section>
-                    <MoteBox padding="none">
-                      <template v-slot:content>
-                        <MoteStack>
-                          <template v-slot:elements>
+                        </MoteBox>
+                      </section>
+                      <!-- large padding -->
+                      <section>
+                        <MoteBox padding="none">
+                          <template v-slot:content>
                             <MoteBox class="invert" padding="wide">
                               <template v-slot:content>
                                 <header>
@@ -83,16 +75,12 @@ import Paragraph from "../content/paragraph.js";
                               </template>
                             </MoteBox>
                           </template>
-                        </MoteStack>
-                      </template>
-                    </MoteBox>
-                  </section>
-                  <!-- jumbo padding -->
-                  <section>
-                    <MoteBox padding="none">
-                      <template v-slot:content>
-                        <MoteStack>
-                          <template v-slot:elements>
+                        </MoteBox>
+                      </section>
+                      <!-- jumbo padding -->
+                      <section>
+                        <MoteBox padding="none">
+                          <template v-slot:content>
                             <MoteBox class="invert" padding="jumbo">
                               <template v-slot:content>
                                 <header>
@@ -106,50 +94,52 @@ import Paragraph from "../content/paragraph.js";
                               </template>
                             </MoteBox>
                           </template>
-                        </MoteStack>
-                      </template>
-                    </MoteBox>
-                  </section>
-                </div>
+                        </MoteBox>
+                      </section>
+                    </template>
+                  </MoteStack>
+                </article>
               </template>
-            </MoteStack>
-          </article>
-          <article>
-            <MoteStack>
-              <template v-slot:elements>
-                <h2>Buttons</h2>
-                <div class="m-grid">
-                  <section>
-                    <h3>Default</h3>
-                    <MoteBox class="medium-pad">
-                      <template v-slot:content>
-                        <MoteButton class="mote-button--default"></MoteButton>
-                      </template>
-                    </MoteBox>
-                  </section>
-                  <section>
-                    <h3>Outlined</h3>
-                    <MoteBox class="medium-pad">
-                      <template v-slot:content>
-                        <MoteButton class="mote-button--outlined"></MoteButton>
-                      </template>
-                    </MoteBox>
-                  </section>
-                  <section>
-                    <h3>Clear</h3>
-                    <MoteBox class="medium-pad">
-                      <template v-slot:content>
-                        <MoteButton class="mote-button--clear"></MoteButton>
-                      </template>
-                    </MoteBox>
-                  </section>
-                </div>
+            </MoteBox>
+            <MoteBox padding="normal">
+              <template v-slot:content>
+                <article>
+                  <h2>Buttons</h2>
+                  <div class="m-grid">
+                    <section>
+                      <h3>Default</h3>
+                      <MoteBox class="medium-pad">
+                        <template v-slot:content>
+                          <MoteButton class="mote-button--default"></MoteButton>
+                        </template>
+                      </MoteBox>
+                    </section>
+                    <section>
+                      <h3>Outlined</h3>
+                      <MoteBox class="medium-pad">
+                        <template v-slot:content>
+                          <MoteButton
+                            class="mote-button--outlined"
+                          ></MoteButton>
+                        </template>
+                      </MoteBox>
+                    </section>
+                    <section>
+                      <h3>Clear</h3>
+                      <MoteBox class="medium-pad">
+                        <template v-slot:content>
+                          <MoteButton class="mote-button--clear"></MoteButton>
+                        </template>
+                      </MoteBox>
+                    </section>
+                  </div>
+                </article>
               </template>
-            </MoteStack>
-          </article>
-        </main>
-      </div>
+            </MoteBox>
+          </template>
+        </MoteBox>
+      </main>
       <SiteFooter />
     </template>
-  </MoteStack>
+  </MoteBox>
 </template>

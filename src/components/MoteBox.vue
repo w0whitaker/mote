@@ -20,9 +20,10 @@ export default {
   --color-light: hsl(0, 0%, 80%);
   --color-dark: hsl(0, 0%, 20%);
   color: var(--color-dark);
-  background-color: var(--color-light);
+  background-color: white;
   outline: 0.125rem solid transparent;
   outline-offset: -0.125rem;
+  border: 1px solid hotpink;
 }
 
 .mote-box.invert {
