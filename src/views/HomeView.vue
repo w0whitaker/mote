@@ -2,7 +2,6 @@
 import SiteHeader from '../components/SiteHeader.vue';
 import SiteFooter from '../components/SiteFooter.vue';
 import MoteButton from '../components/MoteButton.vue';
-import Paragraph from '../content/paragraph.js';
 </script>
 
 <template>
@@ -12,7 +11,7 @@ import Paragraph from '../content/paragraph.js';
       <h2>components</h2>
       <section>
         <h3>introduction</h3>
-        <p>{{ Paragraph.template }}</p>
+        <p>This is Mote. It's a UI component library for Vue.</p>
         <ol>
           <li>
             <a href="#button">button</a>
@@ -41,7 +40,20 @@ import Paragraph from '../content/paragraph.js';
           <h3>button</h3>
           <a href="#top">top</a>
         </header>
-        <MoteButton />
+        <ul role="list">
+          <li>
+            <MoteButton variant="standard" />
+          </li>
+          <li>
+            <MoteButton variant="outlined" />
+          </li>
+          <li>
+            <MoteButton variant="disabled" />
+          </li>
+          <li>
+            <MoteButton variant="clear" />
+          </li>
+        </ul>
       </article>
       <article id="list">
         <header>
@@ -72,6 +84,9 @@ import Paragraph from '../content/paragraph.js';
   <SiteFooter />
 </template>
 <style scoped>
+ul > * + * {
+  margin-block-start: 1.5rem;
+}
 article > header {
   display: flex;
   flex-direction: row;

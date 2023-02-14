@@ -40,4 +40,10 @@
 	--grid-max-width: 69.75rem;
   --grid-gutter: var(--space-s-l, clamp(1.00rem, calc(0.51rem + 2.50vw), 2.25rem));
   --grid-columns: 12;
+
+	/* Colors */
+	--light: hsl(0, 0%, 80%);
+	--dark: hsl(0, 0%, 20%);
+	--primary: hotpink;
+	--secondary: cyan;
 }
