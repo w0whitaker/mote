@@ -2,9 +2,7 @@
 
 <template>
   <header>
-    <div class="m-container">
-      <h1>mote</h1>
-    </div>
+    <h1>mote</h1>
   </header>
 </template>
 
