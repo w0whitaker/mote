@@ -1,7 +1,11 @@
 <script setup>
 import SiteHeader from '../components/SiteHeader.vue';
 import SiteFooter from '../components/SiteFooter.vue';
+import ListType from '../components/ListType.vue';
 import MoteButton from '../components/MoteButton.vue';
+import MoteMenu from '../components/MoteMenu.vue';
+import MoteToggle from '../components/MoteToggle.vue';
+import MoteCard from '../components/MoteCard.vue';
 </script>
 
 <template>
@@ -30,8 +34,8 @@ import MoteButton from '../components/MoteButton.vue';
             <p>a toggle switches between two states</p>
           </li>
           <li>
-            <a href="tab">tab</a>
-            <p>a tab is a section or article separated visuallly</p>
+            <a href="card">tab</a>
+            <p>look at me!</p>
           </li>
         </ol>
       </section>
@@ -60,24 +64,42 @@ import MoteButton from '../components/MoteButton.vue';
           <h3>list</h3>
           <a href="#top">top</a>
         </header>
+        <ListType kind="ordered" />
       </article>
       <article id="menu">
         <header>
           <h3>menu</h3>
           <a href="#top">top</a>
         </header>
+        <MoteMenu>
+          <template #content>
+            <ul role="list">
+              <li>item</li>
+              <li>item</li>
+              <li>item</li>
+              <li>item</li>
+            </ul>
+          </template>
+        </MoteMenu>
       </article>
       <article id="toggle">
         <header>
           <h3>toggle</h3>
           <a href="#top">top</a>
+          <MoteToggle>
+            <template #content>
+              <input type="checkbox" />
+            </template>
+          </MoteToggle>
         </header>
+        <MoteToggle />
       </article>
-      <article id="tab">
+      <article id="card">
         <header>
           <h3>tab</h3>
           <a href="#top">top</a>
         </header>
+        <MoteCard />
       </article>
     </main>
   </div>

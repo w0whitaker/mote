@@ -57,7 +57,6 @@ const styleObject = computed(() => {
       });
   }
 });
-console.log(styleObject.value);
 </script>
 <template>
   <button class="mote-button" :style="styleObject">
