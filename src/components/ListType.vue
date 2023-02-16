@@ -1,7 +1,8 @@
 <script setup>
 import ListItems from './ListItems.vue';
-import { defineProps, ref, computed, provide } from 'vue';
+import { defineProps, ref, provide, computed } from 'vue';
 const props = defineProps({
+  // The kind prop is used to determine the type of list
   kind: {
     type: String,
     default: 'unordered',
@@ -9,25 +10,36 @@ const props = defineProps({
       return ['unordered', 'ordered', 'definition'].includes(value);
     },
   },
+  // The items prop is used to populate the list
+  items: {
+    type: Object,
+    default: () => ({}),
+    validator(value) {
+      return typeof value === 'object';
+    },
+  },
 });
 const kind = ref(props.kind);
-// If kind is unordered, unordered will be true
-const unordered = computed(() => kind.value === 'unordered');
-// If kind is ordered, ordered will be true
-const ordered = computed(() => kind.value === 'ordered');
-// If kind is definition, definition will be true
-const definition = computed(() => kind.value === 'definition');
 // Provide the kind to the ListItems component
 provide('kind', kind);
+// Provide the items to the ListItems component
+provide('items', props.items);
+// Define the list tag based on the kind prop
+const listTag = computed(() => {
+  switch (kind.value) {
+    case 'unordered':
+      return 'ul';
+    case 'ordered':
+      return 'ol';
+    case 'definition':
+      return 'dl';
+    default:
+      return 'ul';
+  }
+});
 </script>
 <template>
-  <ul v-if="unordered" role="list">
+  <listTag>
     <ListItems />
-  </ul>
-  <ol v-if="ordered">
-    <ListItems />
-  </ol>
-  <dl v-if="definition" role="list">
-    <ListItems />
-  </dl>
+  </listTag>
 </template>

@@ -64,7 +64,27 @@ import MoteCard from '../components/MoteCard.vue';
           <h3>list</h3>
           <a href="#top">top</a>
         </header>
-        <ListType kind="ordered" />
+        <section>
+          <h4>unordered</h4>
+          <ListType
+            kind="unordered"
+            :items="{ 1: 'yoshi', 2: 'gordon', 3: 'jasper', 4: 'snowball' }"
+          />
+        </section>
+        <section>
+          <h4>ordered</h4>
+          <ListType
+            kind="ordered"
+            :items="{ 1: 'yoshi', 2: 'gordon', 3: 'jasper', 4: 'snowball' }"
+          />
+        </section>
+        <section>
+          <h4>definition</h4>
+          <ListType
+            kind="definition"
+            :items="{ 1: 'yoshi', 2: 'gordon', 3: 'jasper', 4: 'snowball' }"
+          />
+        </section>
       </article>
       <article id="menu">
         <header>

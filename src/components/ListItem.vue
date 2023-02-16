@@ -1,6 +1,4 @@
 <script setup></script>
 <template>
-  <li>
-    <slot name="item" />
-  </li>
+  <slot name="item" />
 </template>
