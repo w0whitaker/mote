@@ -1,7 +1,6 @@
 <script setup>
 import MoteBox from '../components/MoteBox.vue';
 import MoteButton from '../components/MoteButton.vue';
-import ListComponent from '../components/ListComponent.vue';
 </script>
 
 <template>
