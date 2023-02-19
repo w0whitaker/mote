@@ -24,25 +24,33 @@ const items = ref(props.items);
 provide('items', items);
 </script>
 <template>
-  <slot v-if="kind === 'unordered'" name="list-parent">
+  <template v-if="kind === 'unordered'">
     <ul role="list">
-      <ListItem>
-        <template #list-item></template>
+      <ListItem v-for="item of items" :key="item">
+        <template #list-item>
+          {{ item }}
+        </template>
       </ListItem>
     </ul>
-  </slot>
-  <slot v-if="kind === 'ordered'" name="list-parent">
+  </template>
+  <template v-else-if="kind === 'ordered'">
     <ol>
-      <ListItem>
-        <template #list-item></template>
+      <ListItem v-for="item of items" :key="item">
+        <template #list-item>
+          {{ item }}
+        </template>
       </ListItem>
     </ol>
-  </slot>
-  <slot v-if="kind === 'definition'" name="list-parent">
-    <dl>
-      <ListItem>
-        <template #list-item></template>
-      </ListItem>
+  </template>
+  <template v-else-if="kind === 'definition'">
+    <dl :class="kind">
+      <template v-for="item of items" :key="item">
+        <dt>{{ item.term }}</dt>
+        <dd>{{ item.definition }}</dd>
+      </template>
     </dl>
-  </slot>
+  </template>
+  <template v-else>
+    <p>Invalid list kind.</p>
+  </template>
 </template>

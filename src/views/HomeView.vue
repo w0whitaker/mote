@@ -78,7 +78,11 @@ import ListItems from '../components/ListItems.vue';
                     <h4>definition</h4>
                     <ListContainer
                       kind="definition"
-                      :items="[{ term: 'definition' }]"
+                      :items="[
+                        { term: 'term 1', definition: 'definitiofdsafn 1' },
+                        { term: 'term 2', definition: 'definition 2' },
+                        { term: 'term 3', definition: 'definition 3' },
+                      ]"
                     >
                       <template #list-parent></template>
                     </ListContainer>
