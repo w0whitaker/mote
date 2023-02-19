@@ -1,14 +1,20 @@
-<script>
-export default {
-  props: {
-    padding: String,
+<script setup>
+// Import dependencies from Vue
+import { defineProps, ref, computed } from 'vue';
+// Define props
+const props = defineProps({
+  padding: {
+    type: String,
+    default: 'standard',
+    validator(value) {
+      return ['scant', 'narrow', 'standard', 'wide', 'jumbo'].includes(value);
+    },
   },
-  data() {
-    return {
-      className: `mote-box--${this.padding}`,
-    };
-  },
-};
+});
+// Create ref for padding
+const padding = ref(props.padding);
+// Computed property for class name
+const className = computed(() => `mote-box--${padding.value}`);
 </script>
 <template>
   <div :class="['mote-box', className]">
@@ -30,15 +36,15 @@ export default {
   filter: invert(100%);
 }
 
-.mote-box--none {
-  padding: 0;
+.mote-box--scant {
+  padding: var(--space-3xs);
 }
 
 .mote-box--narrow {
   padding: var(--space-s);
 }
 
-.mote-box--normal {
+.mote-box--standard {
   padding: var(--space-m);
 }
 

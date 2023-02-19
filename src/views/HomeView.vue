@@ -1,141 +1,97 @@
 <script setup>
-import SiteHeader from '../components/SiteHeader.vue';
-import SiteFooter from '../components/SiteFooter.vue';
-import ListType from '../components/ListType.vue';
+import MoteBox from '../components/MoteBox.vue';
 import MoteButton from '../components/MoteButton.vue';
-import MoteMenu from '../components/MoteMenu.vue';
-import MoteToggle from '../components/MoteToggle.vue';
-import MoteCard from '../components/MoteCard.vue';
+import ListComponent from '../components/ListComponent.vue';
 </script>
 
 <template>
-  <div class="site-container">
-    <SiteHeader />
-    <main>
-      <h2>components</h2>
-      <section>
-        <h3>introduction</h3>
-        <p>This is Mote. It's a UI component library for Vue.</p>
-        <ol>
-          <li>
-            <a href="#button">button</a>
-            <p>a button performs an action.</p>
-          </li>
-          <li>
-            <a href="#list">list</a>
-            <p>a list arranges related item</p>
-          </li>
-          <li>
-            <a href="#menu">menu</a>
-            <p>a menu presents choices</p>
-          </li>
-          <li>
-            <a href="toggle">toggle</a>
-            <p>a toggle switches between two states</p>
-          </li>
-          <li>
-            <a href="card">tab</a>
-            <p>look at me!</p>
-          </li>
-        </ol>
-      </section>
-      <article id="button">
-        <header>
-          <h3>button</h3>
-          <a href="#top">top</a>
-        </header>
-        <ul role="list">
-          <li>
-            <MoteButton variant="standard" />
-          </li>
-          <li>
-            <MoteButton variant="outlined" />
-          </li>
-          <li>
-            <MoteButton variant="disabled" />
-          </li>
-          <li>
-            <MoteButton variant="clear" />
-          </li>
-        </ul>
-      </article>
-      <article id="list">
-        <header>
-          <h3>list</h3>
-          <a href="#top">top</a>
-        </header>
-        <section>
-          <h4>unordered</h4>
-          <ListType
-            kind="unordered"
-            :items="{ 1: 'yoshi', 2: 'gordon', 3: 'jasper', 4: 'snowball' }"
-          />
-        </section>
-        <section>
-          <h4>ordered</h4>
-          <ListType
-            kind="ordered"
-            :items="{ 1: 'yoshi', 2: 'gordon', 3: 'jasper', 4: 'snowball' }"
-          />
-        </section>
-        <section>
-          <h4>definition</h4>
-          <ListType
-            kind="definition"
-            :items="{ 1: 'yoshi', 2: 'gordon', 3: 'jasper', 4: 'snowball' }"
-          />
-        </section>
-      </article>
-      <article id="menu">
-        <header>
-          <h3>menu</h3>
-          <a href="#top">top</a>
-        </header>
-        <MoteMenu>
+  <MoteBox>
+    <template #content>
+      <main>
+        <MoteBox padding="scant">
           <template #content>
-            <ul role="list">
-              <li>item</li>
-              <li>item</li>
-              <li>item</li>
-              <li>item</li>
-            </ul>
+            <h2>components</h2>
+            <section>
+              <MoteBox padding="narrow">
+                <template #content>
+                  <h3>introduction</h3>
+                  <p>This is Mote, a UI component library for Vue.</p>
+                </template>
+              </MoteBox>
+              <MoteBox padding="wide">
+                <template #content>
+                  <ListComponent
+                    kind="definition"
+                    :items="['button', 'list', 'card']"
+                  >
+                  </ListComponent>
+                </template>
+              </MoteBox>
+            </section>
+            <!-- Buttons -->
+            <MoteBox padding="narrow">
+              <template #content>
+                <article id="button">
+                  <header>
+                    <h3>button</h3>
+                    <a href="#top">top</a>
+                  </header>
+                  <ul role="list">
+                    <li>
+                      <MoteButton variant="standard" />
+                    </li>
+                    <li>
+                      <MoteButton variant="outlined" />
+                    </li>
+                    <li>
+                      <MoteButton variant="disabled" />
+                    </li>
+                    <li>
+                      <MoteButton variant="clear" />
+                    </li>
+                  </ul>
+                </article>
+              </template>
+            </MoteBox>
+            <!-- Lists -->
+            <MoteBox padding="narrow">
+              <template #content>
+                <article id="list">
+                  <header>
+                    <h3>list</h3>
+                    <a href="#top">top</a>
+                  </header>
+                  <section>
+                    <h4>unordered</h4>
+                    <!-- <ListComponent kind="unordered" :items="{}" /> -->
+                  </section>
+                  <section>
+                    <h4>ordered</h4>
+                    <!-- <ListComponent kind="ordered" :items="{}" /> -->
+                  </section>
+                  <section>
+                    <h4>definition</h4>
+                    <!-- <ListComponent kind="definition" :items="{}" /> -->
+                  </section>
+                </article>
+              </template>
+            </MoteBox>
+            <!-- Cards -->
+            <MoteBox padding="narrow">
+              <template #content>
+                <article id="card">
+                  <header>
+                    <h3>tab</h3>
+                    <a href="#top">top</a>
+                  </header>
+                  <MoteCard />
+                </article>
+              </template>
+            </MoteBox>
           </template>
-        </MoteMenu>
-      </article>
-      <article id="toggle">
-        <header>
-          <h3>toggle</h3>
-          <a href="#top">top</a>
-          <MoteToggle>
-            <template #content>
-              <input type="checkbox" />
-            </template>
-          </MoteToggle>
-        </header>
-        <MoteToggle />
-      </article>
-      <article id="card">
-        <header>
-          <h3>tab</h3>
-          <a href="#top">top</a>
-        </header>
-        <MoteCard />
-      </article>
-    </main>
-  </div>
-  <SiteFooter />
+        </MoteBox>
+      </main>
+    </template>
+  </MoteBox>
 </template>
-<style scoped>
-ul > * + * {
-  margin-block-start: 1.5rem;
-}
-article > header {
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-}
-
-article > header > * {
-  flex-basis: 35%;
-}
-</style>
+<style scoped></style>

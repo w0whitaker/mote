@@ -1,3 +1,22 @@
+/* Measure
+/* https://every-layout.dev/rudiments/axioms/ */
+* {
+	max-inline-size: 60ch;
+}
+
+/* Exceptions to the rule */
+html,
+body,
+div,
+article,
+header,
+nav,
+main,
+footer {
+  max-inline-size: none;
+}
+
+
 /* @link https://utopia.fyi/grid/calculator?c=316,16,1.5,1116,18,1.5,5,2,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l&g=s,l,xl,12 */
 
 .m-container {
