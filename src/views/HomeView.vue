@@ -1,6 +1,8 @@
 <script setup>
 import MoteBox from '../components/MoteBox.vue';
 import MoteButton from '../components/MoteButton.vue';
+import ListContainer from '../components/ListContainer.vue';
+import ListItems from '../components/ListItems.vue';
 </script>
 
 <template>
@@ -18,13 +20,7 @@ import MoteButton from '../components/MoteButton.vue';
                 </template>
               </MoteBox>
               <MoteBox padding="wide">
-                <template #content>
-                  <ListComponent
-                    kind="definition"
-                    :items="['button', 'list', 'card']"
-                  >
-                  </ListComponent>
-                </template>
+                <template #content> </template>
               </MoteBox>
             </section>
             <!-- Buttons -->
@@ -62,15 +58,30 @@ import MoteButton from '../components/MoteButton.vue';
                   </header>
                   <section>
                     <h4>unordered</h4>
-                    <!-- <ListComponent kind="unordered" :items="{}" /> -->
+                    <ListContainer
+                      kind="unordered"
+                      :items="['gloomy', 'brooklyn', 'brownstone']"
+                      ><!-- ListContainer provides a slot named "list-parent"-->
+                      <template #list-parent><ListItems /></template>
+                    </ListContainer>
                   </section>
                   <section>
                     <h4>ordered</h4>
-                    <!-- <ListComponent kind="ordered" :items="{}" /> -->
+                    <ListContainer
+                      kind="ordered"
+                      :items="['first item', 'second item', 'third item']"
+                    >
+                      <template #list-parent></template>
+                    </ListContainer>
                   </section>
                   <section>
                     <h4>definition</h4>
-                    <!-- <ListComponent kind="definition" :items="{}" /> -->
+                    <ListContainer
+                      kind="definition"
+                      :items="[{ term: 'definition' }]"
+                    >
+                      <template #list-parent></template>
+                    </ListContainer>
                   </section>
                 </article>
               </template>
