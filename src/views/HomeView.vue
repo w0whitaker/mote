@@ -79,7 +79,7 @@ import ListItems from '../components/ListItems.vue';
                     <ListContainer
                       kind="definition"
                       :items="[
-                        { term: 'term 1', definition: 'definitiofdsafn 1' },
+                        { term: 'term 1', definition: 'definition 1' },
                         { term: 'term 2', definition: 'definition 2' },
                         { term: 'term 3', definition: 'definition 3' },
                       ]"

@@ -25,25 +25,17 @@ provide('items', items);
 </script>
 <template>
   <template v-if="kind === 'unordered'">
-    <ul role="list">
-      <ListItem v-for="item of items" :key="item">
-        <template #list-item>
-          {{ item }}
-        </template>
-      </ListItem>
+    <ul v-for="item of items" :key="item" role="list">
+      <li>{{ item }}</li>
     </ul>
   </template>
   <template v-else-if="kind === 'ordered'">
-    <ol>
-      <ListItem v-for="item of items" :key="item">
-        <template #list-item>
-          {{ item }}
-        </template>
-      </ListItem>
+    <ol v-for="item of items" :key="item">
+      <li>{{ item }}</li>
     </ol>
   </template>
   <template v-else-if="kind === 'definition'">
-    <dl :class="kind">
+    <dl>
       <template v-for="item of items" :key="item">
         <dt>{{ item.term }}</dt>
         <dd>{{ item.definition }}</dd>
