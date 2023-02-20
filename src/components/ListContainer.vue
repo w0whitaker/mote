@@ -1,5 +1,5 @@
 <script setup>
-import { defineProps, ref, provide } from 'vue';
+import { defineProps, ref, provide, computed } from 'vue';
 import ListItem from './ListItem.vue';
 const props = defineProps({
   kind: {
@@ -22,13 +22,25 @@ provide('kind', kind);
 const items = ref(props.items);
 // Provide items to children
 provide('items', items);
+// Iterate over items object
+const isLink = computed(() => {
+  // Check each item in items
+});
+console.log(isLink);
 </script>
 <template>
   <template v-if="kind === 'unordered'">
     <ul role="list">
       <ListItem v-for="item of items" :key="item">
         <template #list-item>
-          <li>{{ item }}</li>
+          <li>
+            <a v-if="isLink" :href="item.target"
+              ><span>{{ item.term }}</span
+              ><span>{{ isLink }}</span></a
+            >
+            <span v-else-if="Object.hasOwn(item, 'term')">{{ item.term }}</span>
+            <span v-else>{{ item }}</span>
+          </li>
         </template>
       </ListItem>
     </ul>
@@ -37,7 +49,9 @@ provide('items', items);
     <ol>
       <ListItem v-for="item of items" :key="item">
         <template #list-item>
-          <li>{{ item }}</li>
+          <li>
+            <span>{{ item }}</span>
+          </li>
         </template>
       </ListItem>
     </ol>
@@ -47,9 +61,12 @@ provide('items', items);
       <ListItem v-for="{ term, description } in items" :key="term">
         <template #list-item>
           <div v-if="Array.isArray(term)">
-            <dd v-for="el in term" :key="el.id">
-              {{ el }}
-            </dd>
+            <dt v-for="el in term" :key="el.id">
+              <a v-if="el.link" :href="el.target"
+                ><span>{{ el }}</span></a
+              >
+              <span v-else>{{ el }}</span>
+            </dt>
           </div>
           <div v-else>
             <dt>{{ term }}</dt>

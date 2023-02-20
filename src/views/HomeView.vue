@@ -81,9 +81,16 @@ import ListItems from '../components/ListItems.vue';
                     <h4>unordered</h4>
                     <ListContainer
                       kind="unordered"
-                      :items="['gloomy', 'brooklyn', 'brownstone']"
-                      ><!-- ListContainer provides a slot named "list-parent"-->
-                      <template #list-parent><ListItems /></template>
+                      :items="[
+                        {
+                          term: 'gloomy',
+                          link: true,
+                          target: '#',
+                        },
+                        { term: 'brooklyn', link: false, target: '#' },
+                        { term: 'brownstone', link: true, target: '#' },
+                      ]"
+                    >
                     </ListContainer>
                   </section>
                   <section>
