@@ -2,7 +2,7 @@
 import MoteBox from '../components/MoteBox.vue';
 import MoteButton from '../components/MoteButton.vue';
 import ListContainer from '../components/ListContainer.vue';
-import ListItems from '../components/ListItems.vue';
+import CardContainer from '../components/CardContainer.vue';
 </script>
 
 <template>
@@ -133,10 +133,19 @@ import ListItems from '../components/ListItems.vue';
               <template #content>
                 <article id="card">
                   <header>
-                    <h3>tab</h3>
+                    <h3>card</h3>
                     <a href="#top">top</a>
                   </header>
-                  <MoteCard />
+                  <CardContainer>
+                    <template #content>
+                      <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Velit vero quas cupiditate id voluptatum voluptatibus.
+                        Ipsa, sunt quod eveniet tempore nulla minima ducimus
+                        quae repellendus ratione eum! Quaerat, nam perspiciatis!
+                      </p>
+                    </template>
+                  </CardContainer>
                 </article>
               </template>
             </MoteBox>
