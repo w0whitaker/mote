@@ -20,7 +20,28 @@ import ListItems from '../components/ListItems.vue';
                 </template>
               </MoteBox>
               <MoteBox padding="wide">
-                <template #content> </template>
+                <template #content>
+                  <ListContainer
+                    kind="description"
+                    :items="[
+                      {
+                        term: 'button',
+                        description:
+                          'a button is a clickable element that performs an action',
+                      },
+                      {
+                        term: 'list',
+                        description: 'a list is a collection of items',
+                      },
+                      {
+                        term: 'card',
+                        description:
+                          'a card is a container for displaying important content',
+                      },
+                      { term: 'banner' },
+                    ]"
+                  ></ListContainer>
+                </template>
               </MoteBox>
             </section>
             <!-- Buttons -->
@@ -75,13 +96,20 @@ import ListItems from '../components/ListItems.vue';
                     </ListContainer>
                   </section>
                   <section>
-                    <h4>definition</h4>
+                    <h4>description</h4>
                     <ListContainer
-                      kind="definition"
+                      kind="description"
                       :items="[
-                        { term: 'term 1', definition: 'definition 1' },
-                        { term: 'term 2', definition: 'definition 2' },
-                        { term: 'term 3', definition: 'definition 3' },
+                        { term: 'term 1', description: 'description 1' },
+                        { term: 'term 2', description: 'description 2' },
+                        {
+                          term: 'term 3',
+                          description: [
+                            'description 3',
+                            'description 3 pt.2',
+                            'description 3 pt. 3',
+                          ],
+                        },
                       ]"
                     >
                       <template #list-parent></template>

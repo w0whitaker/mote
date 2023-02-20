@@ -6,7 +6,7 @@ const props = defineProps({
     type: String,
     default: 'unordered',
     validator(value) {
-      return ['unordered', 'ordered', 'definition'].includes(value);
+      return ['unordered', 'ordered', 'description'].includes(value);
     },
   },
   items: {
@@ -25,21 +25,38 @@ provide('items', items);
 </script>
 <template>
   <template v-if="kind === 'unordered'">
-    <ul v-for="item of items" :key="item" role="list">
-      <li>{{ item }}</li>
+    <ul role="list">
+      <ListItem v-for="item of items" :key="item">
+        <template #list-item>
+          <li>{{ item }}</li>
+        </template>
+      </ListItem>
     </ul>
   </template>
   <template v-else-if="kind === 'ordered'">
-    <ol v-for="item of items" :key="item">
-      <li>{{ item }}</li>
+    <ol>
+      <ListItem v-for="item of items" :key="item">
+        <template #list-item>
+          <li>{{ item }}</li>
+        </template>
+      </ListItem>
     </ol>
   </template>
-  <template v-else-if="kind === 'definition'">
+  <template v-else-if="kind === 'description'">
     <dl>
-      <template v-for="item of items" :key="item">
-        <dt>{{ item.term }}</dt>
-        <dd>{{ item.definition }}</dd>
-      </template>
+      <ListItem v-for="{ term, description } in items" :key="term">
+        <template #list-item>
+          <dt>{{ term }}</dt>
+          <div v-if="Array.isArray(description)">
+            <dd v-for="el in description" :key="el.id">
+              {{ el }}
+            </dd>
+          </div>
+          <div v-else>
+            <dd>{{ description }}</dd>
+          </div>
+        </template>
+      </ListItem>
     </dl>
   </template>
   <template v-else>

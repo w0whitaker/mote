@@ -8,8 +8,6 @@ const kind = ref(inject('kind'));
     <dd><slot name="definition" /></dd>
   </template>
   <template v-else>
-    <li>
-      <slot name="list-item" />
-    </li>
+    <slot name="list-item" />
   </template>
 </template>
