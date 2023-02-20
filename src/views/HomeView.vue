@@ -101,7 +101,10 @@ import ListItems from '../components/ListItems.vue';
                       kind="description"
                       :items="[
                         { term: 'term 1', description: 'description 1' },
-                        { term: 'term 2', description: 'description 2' },
+                        {
+                          term: ['term 2', 'term 2.1', 'term 2.2'],
+                          description: 'description 2',
+                        },
                         {
                           term: 'term 3',
                           description: [

@@ -46,7 +46,14 @@ provide('items', items);
     <dl>
       <ListItem v-for="{ term, description } in items" :key="term">
         <template #list-item>
-          <dt>{{ term }}</dt>
+          <div v-if="Array.isArray(term)">
+            <dd v-for="el in term" :key="el.id">
+              {{ el }}
+            </dd>
+          </div>
+          <div v-else>
+            <dt>{{ term }}</dt>
+          </div>
           <div v-if="Array.isArray(description)">
             <dd v-for="el in description" :key="el.id">
               {{ el }}
