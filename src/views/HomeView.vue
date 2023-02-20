@@ -4,6 +4,7 @@ import MoteButton from '../components/MoteButton.vue';
 import ListContainer from '../components/ListContainer.vue';
 import CardContainer from '../components/CardContainer.vue';
 import BannerContainer from '../components/BannerContainer.vue';
+import InputContainer from '../components/InputContainer.vue';
 </script>
 
 <template>
@@ -40,6 +41,7 @@ import BannerContainer from '../components/BannerContainer.vue';
                           'a card is a container for displaying important content',
                       },
                       { term: 'banner', description: 'a banner is a banner' },
+                      { term: 'input', description: 'an input is an input' },
                     ]"
                   ></ListContainer>
                 </template>
@@ -163,6 +165,22 @@ import BannerContainer from '../components/BannerContainer.vue';
                       <p>I'm a banner, not a bananna.</p>
                     </template>
                   </BannerContainer>
+                </article>
+              </template>
+            </MoteBox>
+            <!-- Input -->
+            <MoteBox padding="narrow">
+              <template #content>
+                <article id="input">
+                  <header>
+                    <h3>input</h3>
+                    <a href="#top">top</a>
+                  </header>
+                  <InputContainer>
+                    <template #content>
+                      <p>I'm an input, not a bananna.</p>
+                    </template>
+                  </InputContainer>
                 </article>
               </template>
             </MoteBox>
