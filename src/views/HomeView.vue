@@ -3,6 +3,7 @@ import MoteBox from '../components/MoteBox.vue';
 import MoteButton from '../components/MoteButton.vue';
 import ListContainer from '../components/ListContainer.vue';
 import CardContainer from '../components/CardContainer.vue';
+import BannerContainer from '../components/BannerContainer.vue';
 </script>
 
 <template>
@@ -38,7 +39,7 @@ import CardContainer from '../components/CardContainer.vue';
                         description:
                           'a card is a container for displaying important content',
                       },
-                      { term: 'banner' },
+                      { term: 'banner', description: 'a banner is a banner' },
                     ]"
                   ></ListContainer>
                 </template>
@@ -146,6 +147,22 @@ import CardContainer from '../components/CardContainer.vue';
                       </p>
                     </template>
                   </CardContainer>
+                </article>
+              </template>
+            </MoteBox>
+            <!-- Banner -->
+            <MoteBox padding="narrow">
+              <template #content>
+                <article id="banner">
+                  <header>
+                    <h3>banner</h3>
+                    <a href="#top">top</a>
+                  </header>
+                  <BannerContainer>
+                    <template #content>
+                      <p>I'm a banner, not a bananna.</p>
+                    </template>
+                  </BannerContainer>
                 </article>
               </template>
             </MoteBox>
