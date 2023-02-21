@@ -16,10 +16,21 @@ footer {
   max-inline-size: none;
 }
 
+/* https://every-layout.dev/layouts/stack/ */
+
+.flow {
+	display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.flow > * + * {
+	margin-block-start: var(--space-m);
+}
 
 /* @link https://utopia.fyi/grid/calculator?c=316,16,1.5,1116,18,1.5,5,2,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l&g=s,l,xl,12 */
 
-.m-container {
+/* .m-container {
   max-width: var(--grid-max-width);
   padding-inline: var(--grid-gutter);
   margin-inline: auto;
@@ -52,4 +63,4 @@ footer {
 .flex-container > :nth-last-child(n+5),
 .flex-container > :nth-last-child(n+5) ~ * {
   flex-basis: 100%;
-}
+} */

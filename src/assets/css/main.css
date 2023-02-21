@@ -2,6 +2,7 @@
 @import 'global/variables.css';
 @import 'global/typography.css';
 @import 'global/layout.css';
+@import 'global/utilities.css';
 
 .show-me {
 	background-color: hotpink;

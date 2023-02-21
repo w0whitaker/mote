@@ -5,7 +5,7 @@ import MoteBox from '../components/MoteBox.vue';
   <MoteBox>
     <template #content>
       <header>
-        <p>mote</p>
+        <p class="big-text">mote</p>
       </header>
     </template>
   </MoteBox>
