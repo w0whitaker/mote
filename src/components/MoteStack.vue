@@ -1,4 +1,4 @@
-<script></script>
+<script setup></script>
 <template>
   <div class="mote-stack">
     <slot name="elements" />
