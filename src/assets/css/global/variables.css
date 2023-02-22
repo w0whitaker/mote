@@ -42,8 +42,19 @@
   --grid-columns: 12;
 
 	/* Colors */
-	--light: hsl(0, 0%, 80%);
-	--dark: hsl(0, 0%, 20%);
-	--primary: hotpink;
-	--secondary: cyan;
+	--light: #FAFCFA;
+	--dark: #020302;
+	--primary: #FF05CA; /* 60% */
+	/* primary(bg) | dark(text) passes:
+	AA for all text sizes
+	AAA for large (above 18pt) text
+	AAA for bold (above 14pt) text
+	AA for UI components and icons
+	*/
+	--secondary: #DBECFF;
+	--success: #31FF00;
+	--danger: #FF3700;
+	--warning: #FFA300;
+	--info: #81DEFE;
+
 }

@@ -65,10 +65,17 @@ import InputContainer from '../components/InputContainer.vue';
                     <h3>button</h3>
                     <a href="#top">top</a>
                   </header>
-                  <ul role="list">
+                  <ul role="list" class="flow">
                     <li>
-                      <MoteButton variant="standard" />
+                      <MoteButton variant="standard" use="primary" />
                     </li>
+                    <li>
+                      <MoteButton variant="standard" use="secondary" />
+                    </li>
+                    <li>
+                      <MoteButton variant="standard" use="success" />
+                    </li>
+
                     <li>
                       <MoteButton variant="outlined" />
                     </li>
