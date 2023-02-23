@@ -39,7 +39,7 @@
 
 .mote-button--outline {
 	background-color: var(--light);
-	outline: 0.44rem dashed var(--dark);
+	outline: 0.44rem dotted var(--dark);
 	outline-offset: -0.44rem;
 }
 

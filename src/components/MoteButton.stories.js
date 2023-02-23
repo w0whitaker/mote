@@ -3,6 +3,9 @@ import MoteButton from "./MoteButton.vue";
 export default {
   title: "MoteButton",
   component: MoteButton,
+  decorators: [
+    () => ({ template: '<div style="margin: 3em;"><story /></div>' }),
+  ],
   parameters: {
     controls: { sort: "requiredFirst" },
   },
@@ -54,8 +57,4 @@ Danger.args = {
 export const Warning = Template.bind({});
 Warning.args = {
   use: "warning",
-};
-export const Info = Template.bind({});
-Info.args = {
-  use: "info",
 };
