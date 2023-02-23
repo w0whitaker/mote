@@ -25,8 +25,8 @@ const className = computed(() => `mote-box--${padding.value}`);
 .mote-box {
   --color-light: hsl(0, 0%, 80%);
   --color-dark: hsl(0, 0%, 20%);
-  color: var(--color-dark);
-  background-color: var(--light);
+  color: var(--dark);
+  background-color: (--light);
   outline: 0.125rem solid transparent;
   outline-offset: -0.125rem;
   border: 1px solid var(--primary);

@@ -67,23 +67,16 @@ import InputContainer from '../components/InputContainer.vue';
                   </header>
                   <ul role="list" class="flow">
                     <li>
-                      <MoteButton variant="standard" use="primary" />
+                      <MoteButton variant="solid" />
                     </li>
                     <li>
-                      <MoteButton variant="standard" use="secondary" />
-                    </li>
-                    <li>
-                      <MoteButton variant="standard" use="success" />
-                    </li>
-
-                    <li>
-                      <MoteButton variant="outlined" />
+                      <MoteButton variant="outline" />
                     </li>
                     <li>
                       <MoteButton variant="disabled" />
                     </li>
                     <li>
-                      <MoteButton variant="clear" />
+                      <MoteButton variant="subtle" />
                     </li>
                   </ul>
                 </article>

@@ -24,21 +24,16 @@ const props = defineProps({
     type: String,
     default: 'standard',
     validator(value) {
-      return ['standard', 'outlined', 'disabled', 'clear'].includes(value);
+      return ['solid', 'outline', 'disabled', 'subtle'].includes(value);
     },
   },
   use: {
     type: String,
     default: 'primary',
     validator(value) {
-      return [
-        'primary',
-        'secondary',
-        'success',
-        'danger',
-        'warning',
-        'info',
-      ].includes(value);
+      return ['primary', 'secondary', 'success', 'danger', 'warning'].includes(
+        value
+      );
     },
   },
 });
@@ -50,6 +45,6 @@ const classes = computed(() => ({
   '[ mote-button ]': true,
   [`[ mote-button--${use.value || 'primary'} ]`]: true,
   [`[ mote-button--${size.value || 'medium'} ]`]: true,
-  [`[ mote-button--${variant.value || 'standard'} ]`]: true,
+  [`[ mote-button--${variant.value || 'solid'} ]`]: true,
 }));
 </script>

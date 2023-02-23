@@ -42,19 +42,14 @@
   --grid-columns: 12;
 
 	/* Colors */
-	--light: #FAFCFA;
-	--dark: #020302;
-	--primary: #FF05CA; /* 60% */
-	/* primary(bg) | dark(text) passes:
-	AA for all text sizes
-	AAA for large (above 18pt) text
-	AAA for bold (above 14pt) text
-	AA for UI components and icons
-	*/
-	--secondary: #DBECFF;
-	--success: #31FF00;
-	--danger: #FF3700;
-	--warning: #FFA300;
-	--info: #81DEFE;
 
+--light: hsla(226, 100%, 97%, 1);
+--dark: hsla(195, 100%, 6%, 1);
+
+--primary: hsla(227, 15%, 65%, 1);
+--secondary: hsla(90, 11%, 67%, 1);
+
+--success: hsla(160, 81%, 41%, 1);
+--warning: hsla(44, 89%, 52%, 1);
+--danger: hsla(11, 81%, 49%, 1);
 }
