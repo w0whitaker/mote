@@ -1,29 +1,55 @@
-<script></script>
 <template>
-  <button>Button</button>
+  <button :class="classes">
+    {{ label }}
+  </button>
 </template>
-<style scoped>
-button {
-  padding: var(--space-2xs) var(--space-xl);
-  font-size: var(--step-1);
-  font-variant-caps: all-small-caps;
-  border: none;
-  border-radius: 5px;
-}
-.mote-button--default {
-  background-color: white;
-  color: black;
-}
 
-.mote-button--outlined {
-  background-color: white;
-  color: black;
-  outline: 0.125rem solid black;
-  outline-offset: -0.125rem;
-}
+<script setup>
+import { computed, ref } from "vue";
+import "./mote-button.css";
+const props = defineProps({
+  label: {
+    type: String,
+    default: "button",
+    required: true,
+  },
+  size: {
+    type: String,
+    default: "medium",
+    validator(value) {
+      return ["small", "medium", "large"].includes(value);
+    },
+  },
+  variant: {
+    type: String,
+    default: "standard",
+    validator(value) {
+      return ["solid", "outlined", "disabled", "subtle"].includes(value);
+    },
+  },
+  use: {
+    type: String,
+    default: "primary",
+    validator(value) {
+      return [
+        "primary",
+        "secondary",
+        "success",
+        "danger",
+        "warning",
+        "info",
+      ].includes(value);
+    },
+  },
+});
 
-.mote-button--clear {
-  background-color: transparent;
-  color: black;
-}
-</style>
+const variant = ref(props.variant);
+const use = ref(props.use);
+const size = ref(props.size);
+const classes = computed(() => ({
+  "[ mote-button ]": true,
+  [`[ mote-button--${use.value || "primary"} ]`]: true,
+  [`[ mote-button--${size.value || "medium"} ]`]: true,
+  [`[ mote-button--${variant.value || "standard"} ]`]: true,
+}));
+</script>

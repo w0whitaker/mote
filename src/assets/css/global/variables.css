@@ -40,4 +40,22 @@
 	--grid-max-width: 69.75rem;
   --grid-gutter: var(--space-s-l, clamp(1.00rem, calc(0.51rem + 2.50vw), 2.25rem));
   --grid-columns: 12;
+
+	/* Colors */
+	--light: #FAFCFA;
+	--dark: #020302;
+	--primary: #FF05CA; /* 60% */
+	/* primary(bg) | dark(text) passes:
+	AA for all text sizes
+	AAA for large (above 18pt) text
+	AAA for bold (above 14pt) text
+	AA for UI components and icons
+	*/
+	--primay-transparent: hsla(313, 100%, 51%, 0.4);
+	--secondary: #DBECFF;
+	--success: #31FF00;
+	--danger: #FF3700;
+	--warning: #FFA300;
+	--info: #81DEFE;
+
 }
