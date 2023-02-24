@@ -3,9 +3,6 @@ import MoteButton from './MoteButton.vue';
 export default {
   title: 'MoteButton',
   component: MoteButton,
-  decorators: [
-    () => ({ template: '<div style="margin: 3em;"><story /></div>' }),
-  ],
   parameters: {
     controls: { sort: 'requiredFirst' },
   },

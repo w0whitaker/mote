@@ -1,7 +1,9 @@
 <template>
-  <button :class="classes">
-    {{ label }}
-  </button>
+  <div :class="classes">
+    <button>
+      {{ label }}
+    </button>
+  </div>
 </template>
 
 <script setup>
