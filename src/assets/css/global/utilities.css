@@ -22,6 +22,10 @@
 	color: var(--light);
 }
 
+.fg-dark {
+	color: var(--dark);
+}
+
 .primary {
 	background-color: var(--primary);
 	border-color: var(--primary);
@@ -30,16 +34,20 @@
 .secondary {
 	background-color: var(--secondary);
 	border-color: var(--secondary);
+	color: var(--secondary);
 }
 .success {
 	background-color: var(--success);
 	border-color: var(--success);
+	color: var(--success);
 }
 .danger {
 	background-color: var(--danger);
 	border-color: var(--danger);
+	color: var(--danger);
 }
 .warning {
 	background-color: var(--warning);
 	border-color: var(--warning);
+	color: var(--warning);
 }

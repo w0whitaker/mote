@@ -58,5 +58,8 @@ const buttonClasses = computed(() => ({
       : '[ thick-border ]'
   }`]: true,
   [`${variant.value === 'outline' ? '[ bg-light ]' : '[ bg-dark ]'}`]: true,
+  [`${
+    use.value === 'primary' || use.value === 'secondary' ? '' : '[ fg-dark ]'
+  }`]: true,
 }));
 </script>
