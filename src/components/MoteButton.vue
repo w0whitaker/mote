@@ -1,6 +1,6 @@
 <template>
-  <div :class="classes">
-    <button>
+  <div :class="wrapperClasses">
+    <button :class="buttonClasses">
       {{ label }}
     </button>
   </div>
@@ -43,10 +43,14 @@ const props = defineProps({
 const variant = ref(props.variant);
 const use = ref(props.use);
 const size = ref(props.size);
-const classes = computed(() => ({
+const wrapperClasses = computed(() => ({
   '[ mote-button ]': true,
-  [`[ mote-button--${use.value || 'primary'} ]`]: true,
-  [`[ mote-button--${size.value || 'medium'} ]`]: true,
+  [`[ ${use.value} ]`]: true,
   [`[ mote-button--${variant.value || 'solid'} ]`]: true,
+}));
+const buttonClasses = computed(() => ({
+  [`[ mote-button--${size.value || 'medium'} ]`]: true,
+  // if the variant is outline, add the 'bg-light' class
+  [`${variant.value === 'outline' ? '[ bg-light ]' : '[ bg-dark ]'}`]: true,
 }));
 </script>
