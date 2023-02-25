@@ -50,7 +50,13 @@ const wrapperClasses = computed(() => ({
 }));
 const buttonClasses = computed(() => ({
   [`[ mote-button--${size.value || 'medium'} ]`]: true,
-  // if the variant is outline, add the 'bg-light' class
+  [`${
+    size.value === 'small'
+      ? '[ thin-border ]'
+      : size.value === 'medium'
+      ? '[ medium-border ]'
+      : '[ thick-border ]'
+  }`]: true,
   [`${variant.value === 'outline' ? '[ bg-light ]' : '[ bg-dark ]'}`]: true,
 }));
 </script>

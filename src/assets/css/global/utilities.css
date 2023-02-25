@@ -1,6 +1,14 @@
 /* General */
-.no-border {
-	border: none;
+.thin-border {
+	border-width: 0.286rem;
+}
+
+.medium-border {
+	border-width: 0.44rem;
+}
+
+.thick-border {
+	border-width: 0.68rem;
 }
 
 /* Colors */
