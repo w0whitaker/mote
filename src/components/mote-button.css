@@ -5,6 +5,11 @@
 	position: relative;
 	font-weight: 600;
 	letter-spacing: 0.11rem;
+	border-radius: 1rem / 2.35rem;
+}
+
+.mote-button--outline {
+	border-radius: 0.44rem;
 }
 
 .mote-button--outline::after {
@@ -31,6 +36,11 @@
 	letter-spacing: inherit;
 	border-color: inherit;
 	border-style: solid;
+	border-radius: inherit;
+}
+
+.mote-button--disabled {
+	filter: grayscale(100%);
 }
 /* Sizes */
 .mote-button--small {
