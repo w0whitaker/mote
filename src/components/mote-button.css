@@ -37,7 +37,7 @@
 }
 
 .mote-button--subtle::after {
-	border-image-source: repeating-linear-gradient(135deg, transparent 0 5%, var(--light) 5% 100%);
+	border-image-source: repeating-linear-gradient(135deg, transparent 0 5%, var(--light) 5% 95%, transparent 95% 100%);
 	border-image-slice: 1;
 	border-image-outset: 0;
 }
@@ -51,7 +51,7 @@
 }
 
 .mote-button--disabled {
-	filter: grayscale(100%);
+	filter: saturate(0.125) opacity(0.2);
 }
 /* Sizes */
 .mote-button--small {

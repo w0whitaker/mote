@@ -24,8 +24,12 @@
 	color: var(--dark);
 }
 
+.fg-light {
+	color: var(--light);
+}
+
 .desaturated {
-	filter: saturate(15%) brightness(1.25);
+	filter: brightness(2.5);
 }
 
 .strikethrough {
