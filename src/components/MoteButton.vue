@@ -51,17 +51,15 @@ const wrapperClasses = computed(() => ({
 }));
 const buttonClasses = computed(() => ({
   [`[ mote-button--${size.value || 'medium'} ]`]: true,
+  [`${size.value === 'small' ? '[ thin-border ]' : '[ medium-border ]'}`]: true,
   [`${
-    size.value === 'small'
-      ? '[ thin-border ]'
-      : size.value === 'medium'
-      ? '[ medium-border ]'
-      : '[ thick-border ]'
+    ['outline', 'subtle'].includes(variant.value)
+      ? '[ bg-light ]'
+      : '[ bg-dark ]'
   }`]: true,
-  [`${variant.value === 'outline' ? '[ bg-light ]' : '[ bg-dark ]'}`]: true,
   [`${variant.value === 'disabled' ? '[ strikethrough ]' : ''}`]: true,
   [`${
-    use.value === 'primary' || use.value === 'secondary' ? '' : '[ fg-dark ]'
+    ['primary', 'secondary'].includes(use.value) ? '' : '[ fg-dark ]'
   }`]: true,
 }));
 </script>
