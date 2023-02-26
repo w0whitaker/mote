@@ -1,11 +1,13 @@
 <script></script>
 
 <template>
-  <header>
-    <div class="m-container">
-      <h1>mote</h1>
-    </div>
-  </header>
+  <MoteBox>
+    <template #content>
+      <header>
+        <h1>mote</h1>
+      </header>
+    </template>
+  </MoteBox>
 </template>
 
 <style scoped>

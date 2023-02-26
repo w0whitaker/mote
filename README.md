@@ -1,35 +1,87 @@
-# mote
+## components
+- button*
+- banner*
+- breadcrumbs
+- card*
+- progress
+- dialog
+- input*
+- select(dropdown)
+- form
+- radio*
+- checkbox
+- toggle
+- image
+- list
+- pagination
+- tabs
+- table
 
-This template should help get you started developing with Vue 3 in Vite.
 
-## Recommended IDE Setup
+_mine_
+1. Box (container)
+	- Box
+	- BoxLayout
+	- BoxContent
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+_ideas from:_ [headless ui](https://headlessui.com/)
+1. menu(dropdown)
+	- Menu
+	- MenuButton
+	- MenuItems
+	- MenuItem
+2. listbox(select)
+	- Listbox
+	- ListboxButton
+	- ListboxOptions
+	- ListboxOption
+	- ListboxLabel
+3. combobox(autocomplete)
+	- Combobox
+	- ComboboxInput
+	- ComboboxButton
+	- ComboboxOptions
+	- ComboboxOption
+	- ComboboxLabel
+4. switch(toggle)
+	- Switch
+5. disclosure
+	- Disclosure
+	- DisclosureButton
+	- DisclosurePanel
+6. dialog(modal)
+	- Dialog
+	- DialogPanel
+	- DialogTitle
+	- DialogDescription
+7. popover
+	- Popover
+	- PopoverButton
+	- PopoverPanel
+8. radio group
+	- RadioGroup
+	- RadioGroupLabel
+	- RadioGroupOption
+9. tabs
+	- TabGroup
+	- TabList
+	- Tab
+	- TabPanels
+	- TabPanel
 
-## Customize configuration
+[brad frost](https://bradfrost.com/blog/post/layout-grid-in-design-systems/)
+	- "layout and grid serve as boxes to put all that other stuff"
+	- layout container
+		- keep content from edges of viewport
+		- can contain entire page
+		- can be used inside full-width elements
+	- page layout
+		- two column, holy grail etc.
+	- grid component
+		- grid item subcomponent
+		- side-by-side, 2up, etc.
 
-See [Vite Configuration Reference](https://vitejs.dev/config/).
+## axioms
 
-## Project Setup
-
-```sh
-npm install
-```
-
-### Compile and Hot-Reload for Development
-
-```sh
-npm run dev
-```
-
-### Compile and Minify for Production
-
-```sh
-npm run build
-```
-
-### Lint with [ESLint](https://eslint.org/)
-
-```sh
-npm run lint
-```
+1. no text content should be wider than 60ch
+2. a box should be a container for other things

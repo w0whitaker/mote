@@ -1,63 +1,42 @@
+/* Parent - div.mote-button */
+
 .mote-button {
 	display: inline-block;
-	border-style: solid;
-	border-width: 0.44rem;
-	border-radius: 0.44rem;
+	position: relative;
 	font-weight: 600;
 	letter-spacing: 0.11rem;
 }
 
-.mote-button--primary {
-	border-color: var(--primary);
-	background-color: var(--primary);
+.mote-button--outline::after {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	border-style: solid;
+	border-image-source: repeating-linear-gradient(
+		to right,
+		transparent 0 25%,
+		var(--light) 25% 75%,
+		transparent 75% 100%
+	);
+	border-image-width: 0.68rem;
+	border-image-slice: 25% 50% 25% 50%;
+	border-image-repeat: round stretch;
 }
 
-.mote-button--secondary {
-	border-color: var(--secondary);
-	background-color: var(--secondary);
+/* Children - button */
+.mote-button > button {
+	letter-spacing: inherit;
+	border-color: inherit;
+	border-style: solid;
 }
-
-.mote-button--success {
-	border-color: var(--success);
-	background-color: var(--success);
-}
-
-.mote-button--warning {
-	border-color: var(--warning);
-	background-color: var(--warning);
-}
-
-.mote-button--danger {
-	border-color: var(--danger);
-	background-color: var(--danger);
-}
-
-.mote-button--info {
-	border-color: var(--info);
-	background-color: var(--info);
-}
-
-.mote-button--outline {
-	background-color: var(--light);
-	outline: 0.44rem dotted var(--dark);
-	outline-offset: -0.44rem;
-}
-
-.mote-button--disabled {
-	opacity: 0.6;
-	border-color: var(--dark);
-	background-color: var(--light);
-	text-decoration: line-through;
-}
-
-.mote-button--subtle {
-	border-color: transparent;
-	background-color: var(--light);
-}
-
+/* Variants */
+/* Sizes */
 .mote-button--small {
 	font-size: var(--step-0);
-	padding: var(--step--2) var(--step--2);
+	padding: var(--step--2);
 }
 
 .mote-button--medium {

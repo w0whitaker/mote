@@ -1,0 +1,20 @@
+/* Color Theme Swatches in Hex */
+.mote-colors-1-hex { color: #FFA300; }
+.mote-colors-2-hex { color: #31FF00; }
+.mote-colors-3-hex { color: #FF3700; }
+.mote-colors-4-hex { color: #DBECFF; }
+.mote-colors-5-hex { color: #FF05CA; }
+
+/* Color Theme Swatches in RGBA */
+.mote-colors-1-rgba { color: rgba(255, 163, 0, 1); }
+.mote-colors-2-rgba { color: rgba(49, 255, 0, 1); }
+.mote-colors-3-rgba { color: rgba(255, 55, 0, 1); }
+.mote-colors-4-rgba { color: rgba(219, 236, 255, 1); }
+.mote-colors-5-rgba { color: rgba(255, 5, 202, 1); }
+
+/* Color Theme Swatches in HSLA */
+.mote-colors-1-hsla { color: hsla(38, 100, 50, 1); }
+.mote-colors-2-hsla { color: hsla(108, 100, 50, 1); }
+.mote-colors-3-hsla { color: hsla(12, 100, 50, 1); }
+.mote-colors-4-hsla { color: hsla(211, 100, 92, 1); }
+.mote-colors-5-hsla { color: hsla(312, 100, 50, 1); }

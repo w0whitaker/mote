@@ -1,13 +1,10 @@
-import MoteButton from "./MoteButton.vue";
+import MoteButton from './MoteButton.vue';
 
 export default {
-  title: "MoteButton",
+  title: 'MoteButton',
   component: MoteButton,
-  decorators: [
-    () => ({ template: '<div style="margin: 3em;"><story /></div>' }),
-  ],
   parameters: {
-    controls: { sort: "requiredFirst" },
+    controls: { sort: 'requiredFirst' },
   },
   argTypes: {
     use: {
@@ -16,15 +13,15 @@ export default {
       },
     },
     size: {
-      options: ["small", "medium", "large"],
-      control: { type: "select" },
+      options: ['small', 'medium', 'large'],
+      control: { type: 'select' },
     },
     variant: {
-      options: ["solid", "outline", "disabled", "subtle"],
-      control: { type: "select" },
+      options: ['solid', 'outline', 'disabled', 'subtle'],
+      control: { type: 'select' },
     },
     label: {
-      control: { type: "text" },
+      control: { type: 'text' },
     },
   },
 };
@@ -39,22 +36,22 @@ const Template = (args) => ({
 
 export const Primary = Template.bind({});
 Primary.args = {
-  use: "primary",
-  size: "medium",
+  use: 'primary',
+  size: 'medium',
 };
 export const Secondary = Template.bind({});
 Secondary.args = {
-  use: "secondary",
+  use: 'secondary',
 };
 export const Success = Template.bind({});
 Success.args = {
-  use: "success",
+  use: 'success',
 };
 export const Danger = Template.bind({});
 Danger.args = {
-  use: "danger",
+  use: 'danger',
 };
 export const Warning = Template.bind({});
 Warning.args = {
-  use: "warning",
+  use: 'warning',
 };

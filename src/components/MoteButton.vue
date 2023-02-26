@@ -1,37 +1,39 @@
 <template>
-  <button :class="classes">
-    {{ label }}
-  </button>
+  <div :class="wrapperClasses">
+    <button :class="buttonClasses">
+      {{ label }}
+    </button>
+  </div>
 </template>
 
 <script setup>
-import { computed, ref } from "vue";
-import "./mote-button.css";
+import { computed, ref } from 'vue';
+import './mote-button.css';
 const props = defineProps({
   label: {
     type: String,
-    default: "button",
+    default: 'button',
     required: true,
   },
   size: {
     type: String,
-    default: "medium",
+    default: 'medium',
     validator(value) {
-      return ["small", "medium", "large"].includes(value);
+      return ['small', 'medium', 'large'].includes(value);
     },
   },
   variant: {
     type: String,
-    default: "standard",
+    default: 'standard',
     validator(value) {
-      return ["solid", "outline", "disabled", "subtle"].includes(value);
+      return ['solid', 'outline', 'disabled', 'subtle'].includes(value);
     },
   },
   use: {
     type: String,
-    default: "primary",
+    default: 'primary',
     validator(value) {
-      return ["primary", "secondary", "success", "danger", "warning"].includes(
+      return ['primary', 'secondary', 'success', 'danger', 'warning'].includes(
         value
       );
     },
@@ -41,10 +43,23 @@ const props = defineProps({
 const variant = ref(props.variant);
 const use = ref(props.use);
 const size = ref(props.size);
-const classes = computed(() => ({
-  "[ mote-button ]": true,
-  [`[ mote-button--${use.value || "primary"} ]`]: true,
-  [`[ mote-button--${size.value || "medium"} ]`]: true,
-  [`[ mote-button--${variant.value || "solid"} ]`]: true,
+const wrapperClasses = computed(() => ({
+  '[ mote-button ]': true,
+  [`[ ${use.value} ]`]: true,
+  [`[ mote-button--${variant.value || 'solid'} ]`]: true,
+}));
+const buttonClasses = computed(() => ({
+  [`[ mote-button--${size.value || 'medium'} ]`]: true,
+  [`${
+    size.value === 'small'
+      ? '[ thin-border ]'
+      : size.value === 'medium'
+      ? '[ medium-border ]'
+      : '[ thick-border ]'
+  }`]: true,
+  [`${variant.value === 'outline' ? '[ bg-light ]' : '[ bg-dark ]'}`]: true,
+  [`${
+    use.value === 'primary' || use.value === 'secondary' ? '' : '[ fg-dark ]'
+  }`]: true,
 }));
 </script>
