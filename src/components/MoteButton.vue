@@ -46,6 +46,7 @@ const size = ref(props.size);
 const wrapperClasses = computed(() => ({
   '[ mote-button ]': true,
   [`[ ${use.value} ]`]: true,
+  [`${variant.value === 'disabled' ? '[ desaturated ]' : ''}`]: true,
   [`[ mote-button--${variant.value || 'solid'} ]`]: true,
 }));
 const buttonClasses = computed(() => ({
@@ -58,6 +59,7 @@ const buttonClasses = computed(() => ({
       : '[ thick-border ]'
   }`]: true,
   [`${variant.value === 'outline' ? '[ bg-light ]' : '[ bg-dark ]'}`]: true,
+  [`${variant.value === 'disabled' ? '[ strikethrough ]' : ''}`]: true,
   [`${
     use.value === 'primary' || use.value === 'secondary' ? '' : '[ fg-dark ]'
   }`]: true,

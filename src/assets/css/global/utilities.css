@@ -1,4 +1,3 @@
-/* General */
 .thin-border {
 	border-width: 0.286rem;
 }
@@ -11,7 +10,6 @@
 	border-width: 0.68rem;
 }
 
-/* Colors */
 .bg-light {
 	background-color: var(--light);
 	color: inherit;
@@ -24,6 +22,14 @@
 
 .fg-dark {
 	color: var(--dark);
+}
+
+.desaturated {
+	filter: saturate(15%) brightness(1.25);
+}
+
+.strikethrough {
+	text-decoration: line-through;
 }
 
 .primary {
