@@ -32,3 +32,6 @@ coverage
 
 # Temporarily ignore during development
 src/assets/logo
+
+# storybook
+storybook-static
