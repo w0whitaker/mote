@@ -22,11 +22,6 @@ provide('kind', kind);
 const items = ref(props.items);
 // Provide items to children
 provide('items', items);
-// Iterate over items object
-const isLink = computed(() => {
-  // Check each item in items
-});
-console.log(isLink);
 </script>
 <template>
   <template v-if="kind === 'unordered'">

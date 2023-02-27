@@ -1,0 +1,14 @@
+li {
+	color: var(--primary);
+}
+
+dt {
+	color: var(--primary);
+	font-weight: bold;
+}
+
+dd {
+	color: var(--secondary);
+	font-style: italic;
+	text-indent: 3ch;
+}
