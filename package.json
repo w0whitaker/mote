@@ -7,7 +7,7 @@
     "build": "vite build",
     "preview": "vite preview",
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs --fix --ignore-path .gitignore",
-    "storybook": "start-storybook -p 6006",
+    "storybook": "start-storybook --no-open -p 6006",
     "build-storybook": "build-storybook"
   },
   "dependencies": {
