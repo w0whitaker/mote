@@ -42,6 +42,12 @@
 	border-image-outset: 0;
 }
 
+.danger > button,
+.warning > button,
+.success > button {
+	text-transform: uppercase;
+}
+
 /* Children - button */
 .mote-button > button {
 	letter-spacing: inherit;
@@ -53,6 +59,7 @@
 .mote-button--disabled {
 	filter: saturate(0.125) opacity(0.2);
 }
+
 /* Sizes */
 .mote-button--small {
 	font-size: var(--step-0);
