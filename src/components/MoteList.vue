@@ -46,12 +46,16 @@
     <!-- Ordered lists-->
     <ol v-if="decoration">
       <li v-for="item of items" :key="item">
-        {{ item }}
+        <a v-if="item.isLink" :href="item.target">{{ item.term }}</a>
+        <span v-else-if="item.term">{{ item.term }}</span>
+        <span v-else>{{ item }}</span>
       </li>
     </ol>
     <ol v-else role="list">
       <li v-for="item of items" :key="item">
-        {{ item }}
+        <a v-if="item.isLink" :href="item.target">{{ item.term }}</a>
+        <span v-else-if="item.term">{{ item.term }}</span>
+        <span v-else>{{ item }}</span>
       </li>
     </ol>
   </template>

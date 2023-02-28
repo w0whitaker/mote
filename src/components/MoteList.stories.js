@@ -50,7 +50,13 @@ UnorderedWithLinks.args = {
 export const Ordered = Template.bind({});
 Ordered.args = {
   kind: 'ordered',
-  items: ['minimalist', 'micro', 'cabin', 'dwell'],
+  items: ['minimalist', 'micro', 'cabin'],
+};
+
+export const OrderedWithLinks = Template.bind({});
+OrderedWithLinks.args = {
+  kind: 'ordered',
+  items: ['minimalist', { term: 'micro', isLink: true, target: '#' }, 'cabin'],
 };
 
 export const Description = Template.bind({});
