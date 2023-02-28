@@ -1,10 +1,33 @@
 <script setup>
 import MoteBox from '../components/MoteBox.vue';
 import MoteButton from '../components/MoteButton.vue';
-import ListContainer from '../components/ListContainer.vue';
+import MoteList from '../components/MoteList.vue';
 import CardContainer from '../components/CardContainer.vue';
 import BannerContainer from '../components/BannerContainer.vue';
 import InputContainer from '../components/InputContainer.vue';
+
+const toc = [
+  {
+    term: 'button',
+    description: 'a button is a clickable element that performs an action',
+  },
+  {
+    term: 'list',
+    description: 'a list is a collection of items',
+  },
+  {
+    term: 'card',
+    description: 'a card is a container for displaying important content',
+  },
+  {
+    term: 'banner',
+    description: 'a banner is a banner',
+  },
+  {
+    term: 'input',
+    description: 'an input is an input',
+  },
+];
 </script>
 
 <template>
@@ -27,33 +50,10 @@ import InputContainer from '../components/InputContainer.vue';
               <!-- Table of Contents -->
               <MoteBox padding="wide">
                 <template #content>
-                  <ListContainer
+                  <MoteList
                     kind="description"
-                    :items="[
-                      {
-                        term: 'button',
-                        description:
-                          'a button is a clickable element that performs an action',
-                      },
-                      {
-                        term: 'list',
-                        description: 'a list is a collection of items',
-                      },
-                      {
-                        term: 'card',
-                        description:
-                          'a card is a container for displaying important content',
-                      },
-                      {
-                        term: 'banner',
-                        description: 'a banner is a banner',
-                      },
-                      {
-                        term: 'input',
-                        description: 'an input is an input',
-                      },
-                    ]"
-                  ></ListContainer>
+                    :items="toc"
+                    :decoration="true" />
                 </template>
               </MoteBox>
             </section>
@@ -92,32 +92,33 @@ import InputContainer from '../components/InputContainer.vue';
                   </header>
                   <section>
                     <h4>unordered</h4>
-                    <ListContainer
+                    <MoteList
                       kind="unordered"
                       :items="[
                         {
                           term: 'gloomy',
                           link: true,
-                          target: '#',
+                          target: 'www.google.com',
                         },
-                        { term: 'brooklyn', link: false, target: '#' },
+                        {
+                          term: 'brooklyn',
+                          link: false,
+                          target: 'williamwhitaker.dev',
+                        },
                         { term: 'brownstone', link: true, target: '#' },
-                      ]"
-                    >
-                    </ListContainer>
+                      ]">
+                    </MoteList>
                   </section>
                   <section>
                     <h4>ordered</h4>
-                    <ListContainer
+                    <MoteList
                       kind="ordered"
-                      :items="['first item', 'second item', 'third item']"
-                    >
-                      <template #list-parent></template>
-                    </ListContainer>
+                      :items="['first item', 'second item', 'third item']">
+                    </MoteList>
                   </section>
                   <section>
                     <h4>description</h4>
-                    <ListContainer
+                    <MoteList
                       kind="description"
                       :items="[
                         { term: 'term 1', description: 'description 1' },
@@ -133,10 +134,8 @@ import InputContainer from '../components/InputContainer.vue';
                             'description 3 pt. 3',
                           ],
                         },
-                      ]"
-                    >
-                      <template #list-parent></template>
-                    </ListContainer>
+                      ]">
+                    </MoteList>
                   </section>
                 </article>
               </template>
