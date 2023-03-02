@@ -3,6 +3,12 @@ import MoteList from './MoteList.vue';
 export default {
   title: 'MoteList',
   component: MoteList,
+  decorators: [
+    () => ({
+      template:
+        '<div style="border: 1px solid hotpink; padding: 1rem;"><story></div>',
+    }),
+  ],
   parameters: {
     controls: { sort: 'requiredFirst' },
   },
@@ -19,6 +25,10 @@ export default {
     },
     decoration: {
       control: 'boolean',
+    },
+    theme: {
+      options: ['unstyled', 'bordered', 'divided', 'block'],
+      control: 'select',
     },
   },
 };
@@ -73,7 +83,7 @@ Description.args = {
     },
     {
       term: ['card', 'banner', 'input'],
-      description: 'other components one you might find',
+      description: 'other components one might find',
     },
   ],
 };

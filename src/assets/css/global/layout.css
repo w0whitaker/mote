@@ -64,3 +64,18 @@ footer {
 .flex-container > :nth-last-child(n+5) ~ * {
   flex-basis: 100%;
 } */
+.pl-xs {
+	padding-left: var(--space-xs);
+}
+
+.ml-m {
+	margin-left: var(--space-m);
+}
+
+.pt-s {
+	padding-top: var(--space-s);
+}
+
+.pb-s {
+	padding-bottom: var(--space-s);
+}

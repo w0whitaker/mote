@@ -1,14 +1,28 @@
-li {
-	color: var(--primary);
-}
-
 dt {
-	color: var(--primary);
 	font-weight: bold;
 }
 
 dd {
-	color: var(--secondary);
 	font-style: italic;
 	text-indent: 3ch;
+}
+
+.mote-list dt {
+	background-color: var(--light);
+}
+
+.mote-list--bordered {
+	border: 1px solid var(--dark);
+	padding: 0;
+}
+
+.mote-list--bordered > li,
+.mote-list--bordered > div {
+	border-bottom: 1px solid var(--dark);
+	width: 100%;
+}
+
+.mote-list--bordered > li:last-child,
+.mote-list--bordered > div:last-child {
+	border-bottom: none;
 }
