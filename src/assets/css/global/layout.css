@@ -28,6 +28,186 @@ footer {
 	margin-block-start: var(--space-m);
 }
 
+/* Padding */
+.pa-xs {
+	padding: var(--space-xs);
+}
+
+.pa-s {
+	padding: var(--space-s);
+}
+
+.pa-m {
+	padding: var(--space-m);
+}
+
+.pa-l {
+	padding: var(--space-l);
+}
+
+.pa-xl {
+	padding: var(--space-xl);
+}
+
+.pv-xs {
+	padding: var(--space-xs) 0;
+}
+
+.pv-s {
+	padding: var(--space-s) 0;
+}
+
+.pv-m {
+	padding: var(--space-m) 0;
+}
+
+.pv-l {
+	padding: var(--space-l) 0;
+}
+
+.pv-xl {
+	padding: var(--space-xl) 0;
+}
+
+.ph-xs {
+	padding: 0 var(--space-xs);
+}
+
+.ph-s {
+	padding: 0 var(--space-s);
+}
+
+.ph-m {
+	padding: 0 var(--space-m);
+}
+
+.ph-l {
+	padding: 0 var(--space-l);
+}
+
+.ph-xl {
+	padding: 0 var(--space-xl);
+}
+
+.pt-xs {
+	padding-top: var(--space-xs);
+}
+
+.pt-s {
+	padding-top: var(--space-s);
+}
+
+.pt-m {
+	padding-top: var(--space-m);
+}
+
+.pt-l {
+	padding-top: var(--space-l);
+}
+
+.pt-xl {
+	padding-top: var(--space-xl);
+}
+
+.pr-xs {
+	padding-right: var(--space-xs);
+}
+
+.pr-s {
+	padding-right: var(--space-s);
+}
+
+.pr-m {
+	padding-right: var(--space-m);
+}
+
+.pr-l {
+	padding-right: var(--space-l);
+}
+
+.pr-xl {
+	padding-right: var(--space-xl);
+}
+
+.pb-xs {
+	padding-bottom: var(--space-xs);
+}
+
+.pb-s {
+	padding-bottom: var(--space-s);
+}
+
+.pb-m {
+	padding-bottom: var(--space-m);
+}
+
+.pb-l {
+	padding-bottom: var(--space-l);
+}
+
+.pb-xl {
+	padding-bottom: var(--space-xl);
+}
+
+.pl-xs {
+	padding-left: var(--space-xs);
+}
+
+.pl-s {
+	padding-left: var(--space-s);
+}
+
+.pl-m {
+	padding-left: var(--space-m);
+}
+
+.pl-l {
+	padding-left: var(--space-l);
+}
+
+.pl-xl {
+	padding-left: var(--space-xl);
+}
+
+.p-start-xs {
+	padding-block-start: var(--space-xs);
+}
+
+.p-start-s {
+	padding-block-start: var(--space-s);
+}
+
+.p-start-m {
+	padding-block-start: var(--space-m);
+}
+
+.p-start-l {
+	padding-block-start: var(--space-);
+}
+
+.p-start-xl {
+	padding-block-start: var(--space-xl);
+}
+
+.p-end-xs {
+	padding-block-end: var(--space-xs);
+}
+
+.p-end-s {
+	padding-block-end: var(--space-s);
+}
+
+.p-end-m {
+	padding-block-end: var(--space-m);
+}
+
+.p-end-l {
+	padding-block-end: var(--space-);
+}
+
+.p-end-xl {
+	padding-block-end: var(--space-xl);
+}
 /* @link https://utopia.fyi/grid/calculator?c=316,16,1.5,1116,18,1.5,5,2,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l&g=s,l,xl,12 */
 
 /* .m-container {
@@ -64,18 +244,3 @@ footer {
 .flex-container > :nth-last-child(n+5) ~ * {
   flex-basis: 100%;
 } */
-.pl-xs {
-	padding-left: var(--space-xs);
-}
-
-.ml-m {
-	margin-left: var(--space-m);
-}
-
-.pt-s {
-	padding-top: var(--space-s);
-}
-
-.pb-s {
-	padding-bottom: var(--space-s);
-}

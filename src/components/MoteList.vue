@@ -1,31 +1,29 @@
 <template>
+  <component :is="MoteList - [kind]" />
   <template v-if="kind === 'description'">
     <!-- Description lists -->
     <dl :class="listClasses">
       <div v-for="{ term, description } in items" :key="term" class="pt-s">
         <!-- Description lists can have more than on term for each description; this checks if that is true. -->
-        <template v-if="Array.isArray(term) && decoration"
-          ><!-- 'decoration' here might be better as a class -->
-          <dt v-for="el in term" :key="el.id" class="pl-xs">
-            <a v-if="isLink" href="{{ el.target }}">{{ el.term }}:</a>
-            <span v-else>{{ el.term }}</span>
+        <template v-if="Array.isArray(term) && decoration">
+          <dt v-for="el in term" :key="el.id" :class="termClasses">
+            <a v-if="el.isLink" href="{{ el.target }}">{{ el }}:</a>
+            <span v-else>{{ el }}</span>
           </dt>
         </template>
         <template v-else-if="Array.isArray(term)">
-          <dt v-for="el in term" :key="el.id" class="pl-xs">
-            <a v-if="isLink" href="{{ el.target }}">
-              {{ el.term }}
-            </a>
+          <dt v-for="el in term" :key="el.id" :class="termClasses">
+            <a v-if="el.isLink" href="{{ el.target }}">{{ el }}</a>
             <span v-else>{{ el }}</span>
           </dt>
         </template>
         <!-- If 'term' is not an array, just print the term -->
         <template v-else-if="decoration">
-          <dt class="pl-xs">{{ term }}:</dt>
+          <dt :class="termClasses">{{ term }}:</dt>
         </template>
-        <template v-else
-          ><dt class="pl-xs">{{ term }}</dt></template
-        >
+        <template v-else>
+          <dt :class="termClasses">{{ term }}</dt>
+        </template>
         <!-- There can also be multiple descriptions per term, so again, check for an array. -->
         <template v-if="Array.isArray(description) && decoration">
           <dd v-for="el in description" :key="el.id" :class="itemClasses">
@@ -91,7 +89,7 @@
 </template>
 
 <script setup>
-import { ref, computed } from 'vue';
+import { ref, computed, provide } from 'vue';
 import './mote-list.css';
 const props = defineProps({
   kind: {
@@ -118,6 +116,8 @@ const props = defineProps({
 });
 const kind = ref(props.kind);
 const theme = ref(props.theme);
+const items = ref(props.items);
+provide(items);
 const listClasses = computed(() => ({
   [`[ mote-list ]`]: true,
   [`[ mote-list--${theme.value || 'bordered'} ]`]: true,
@@ -125,14 +125,13 @@ const listClasses = computed(() => ({
 }));
 
 const itemClasses = computed(() => ({
-  [`[ inline-block ]`]: true,
+  [`[ inline-block ]`]: false,
   [`[ ml-m ]`]: true,
   [`[ pb-s ]`]: true,
   [`[ pt-s ]`]: true,
 }));
 
-const descClasses = computed(() => ({
-  [`[ inline-block ]`]: true,
-  [`[ ml-xs ]`]: true,
+const termClasses = computed(() => ({
+  [`[ p-start-xs p-end-xs pl-s ]`]: true,
 }));
 </script>

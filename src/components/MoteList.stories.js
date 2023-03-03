@@ -6,7 +6,7 @@ export default {
   decorators: [
     () => ({
       template:
-        '<div style="border: 1px solid hotpink; padding: 1rem;"><story></div>',
+        '<div style="border: 1px solid hotpink; padding: 1rem;"><story /></div>',
     }),
   ],
   parameters: {
@@ -84,6 +84,10 @@ Description.args = {
     {
       term: ['card', 'banner', 'input'],
       description: 'other components one might find',
+    },
+    {
+      term: 'friendly greetings',
+      description: ['ohai!', 'oh hello!', 'how did you get in here?'],
     },
   ],
 };
