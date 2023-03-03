@@ -1,96 +1,12 @@
 <template>
-  <component :is="MoteList - [kind]" />
-  <template v-if="kind === 'description'">
-    <!-- Description lists -->
-    <dl :class="listClasses">
-      <div v-for="{ term, description } in items" :key="term" class="pt-s">
-        <!-- Description lists can have more than on term for each description; this checks if that is true. -->
-        <template v-if="Array.isArray(term) && decoration">
-          <dt v-for="el in term" :key="el.id" :class="termClasses">
-            <a v-if="el.isLink" href="{{ el.target }}">{{ el }}:</a>
-            <span v-else>{{ el }}</span>
-          </dt>
-        </template>
-        <template v-else-if="Array.isArray(term)">
-          <dt v-for="el in term" :key="el.id" :class="termClasses">
-            <a v-if="el.isLink" href="{{ el.target }}">{{ el }}</a>
-            <span v-else>{{ el }}</span>
-          </dt>
-        </template>
-        <!-- If 'term' is not an array, just print the term -->
-        <template v-else-if="decoration">
-          <dt :class="termClasses">{{ term }}:</dt>
-        </template>
-        <template v-else>
-          <dt :class="termClasses">{{ term }}</dt>
-        </template>
-        <!-- There can also be multiple descriptions per term, so again, check for an array. -->
-        <template v-if="Array.isArray(description) && decoration">
-          <dd v-for="el in description" :key="el.id" :class="itemClasses">
-            {{ el }}
-          </dd>
-        </template>
-        <template v-else-if="Array.isArray(description)">
-          <dd v-for="el in description" :key="el.id" :class="itemClasses">
-            {{ el }}
-          </dd>
-        </template>
-        <template v-else-if="decoration">
-          <dd :class="itemClasses">{{ description }}</dd>
-        </template>
-        <template v-else>
-          <dd :class="itemClasses">{{ description }}</dd>
-        </template>
-      </div>
-    </dl>
-  </template>
-  <template v-else-if="kind === 'ordered'">
-    <!-- Ordered lists-->
-    <ol v-if="decoration" :class="listClasses">
-      <li v-for="item of items" :key="item">
-        <a v-if="item.isLink" :href="item.target" :class="itemClasses">{{
-          item.term
-        }}</a>
-        <span v-else-if="item.term" :class="itemClasses">{{ item.term }}</span>
-        <span v-else :class="itemClasses">{{ item }}</span>
-      </li>
-    </ol>
-    <ol v-else role="list" :class="listClasses">
-      <li v-for="item of items" :key="item">
-        <a v-if="item.isLink" :href="item.target" :class="itemClasses">{{
-          item.term
-        }}</a>
-        <span v-else-if="item.term" :class="itemClasses">{{ item.term }}</span>
-        <span v-else :class="itemClasses">{{ item }}</span>
-      </li>
-    </ol>
-  </template>
-  <!-- Unordered lists -->
-  <template v-else>
-    <ul v-if="decoration" :class="listClasses">
-      <li v-for="item of items" :key="item">
-        <a v-if="item.isLink" :href="item.target" :class="itemClasses">{{
-          item.term
-        }}</a>
-        <span v-else-if="item.term" :class="itemClasses">{{ item.term }}</span>
-        <span v-else :class="itemClasses">{{ item }}</span>
-      </li>
-    </ul>
-    <ul v-else role="list" :class="listClasses">
-      <li v-for="item of items" :key="item">
-        <a v-if="item.isLink" :href="item.target" :class="itemClasses">{{
-          item.term
-        }}</a>
-        <span v-else-if="item.term" :class="itemClasses">{{ item.term }}</span>
-        <span v-else :class="itemClasses">{{ item }}</span>
-      </li>
-    </ul>
-  </template>
+  <component :is="renderComponent"></component>
 </template>
 
 <script setup>
 import { ref, computed, provide } from 'vue';
-import './mote-list.css';
+import MoteListUnordered from './MoteListUnordered.vue';
+import MoteListOrdered from './MoteListOrdered.vue';
+import MoteListDescription from './MoteListDescription.vue';
 const props = defineProps({
   kind: {
     type: String,
@@ -114,10 +30,17 @@ const props = defineProps({
     },
   },
 });
+const items = ref(props.items);
 const kind = ref(props.kind);
 const theme = ref(props.theme);
-const items = ref(props.items);
-provide(items);
+
+const renderComponent = computed(() => {
+  return kind.value === 'unordered'
+    ? MoteListUnordered
+    : kind.value === 'ordered'
+    ? MoteListOrdered
+    : MoteListDescription;
+});
 const listClasses = computed(() => ({
   [`[ mote-list ]`]: true,
   [`[ mote-list--${theme.value || 'bordered'} ]`]: true,
@@ -125,13 +48,21 @@ const listClasses = computed(() => ({
 }));
 
 const itemClasses = computed(() => ({
-  [`[ inline-block ]`]: false,
-  [`[ ml-m ]`]: true,
-  [`[ pb-s ]`]: true,
-  [`[ pt-s ]`]: true,
+  [`[ ml-m pb-s pt-s ]`]: true,
+  [`[ inline-block ]`]: true,
 }));
 
 const termClasses = computed(() => ({
   [`[ p-start-xs p-end-xs pl-s ]`]: true,
 }));
+
+provide('items', items.value);
+
+provide('listClasses', listClasses);
+
+provide('itemClasses', itemClasses);
+
+provide('termClasses', termClasses);
+
+provide('decoration', props.decoration);
 </script>
