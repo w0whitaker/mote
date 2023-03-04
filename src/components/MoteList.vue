@@ -50,7 +50,7 @@ const listClasses = computed(() => ({
 
 const itemClasses = computed(() => ({
   [`[ pb-s pt-s ]`]: true,
-  [`[ inline-block full-width ]`]: true,
+  [`[ inline-block ]`]: true,
 }));
 
 const termClasses = computed(() => ({

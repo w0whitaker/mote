@@ -22,9 +22,3 @@ const items = inject('items');
 const listClasses = inject('listClasses');
 const decoration = inject('decoration');
 </script>
-
-<style scoped>
-li {
-  list-style: inside;
-}
-</style>
