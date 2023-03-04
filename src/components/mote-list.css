@@ -22,7 +22,10 @@ dd {
 .mote-list--bordered > li,
 .mote-list--bordered > div {
 	border-bottom: 1px solid var(--dark);
-	width: 100%;
+}
+
+.mote-list--bordered > li,
+.mote-list--bordered > div:not("dl-child") {
 	padding-inline-start: var(--space-m);
 }
 

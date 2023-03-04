@@ -2,7 +2,7 @@
   <div>
     <!-- Description lists -->
     <dl :class="listClasses">
-      <div v-for="{ term, description } in items" :key="term" class="pt-s">
+      <div v-for="{ term, description } in items" :key="term" class="dl-child">
         <!-- Description lists can have more than on term for each description; this checks if that is true. -->
         <template v-if="Array.isArray(term) && decoration">
           <dt v-for="el in term" :key="el.id" :class="termClasses">
@@ -27,22 +27,22 @@
         </template>
         <!-- There can also be multiple descriptions per term, so again, check for an array. -->
         <template v-if="Array.isArray(description) && decoration">
-          <dd v-for="el in description" :key="el.id" :class="itemClasses">
+          <dd v-for="el in description" :key="el.id" class="[ full-width ]">
             <MoteListItem :list-item="el" />
           </dd>
         </template>
         <template v-else-if="Array.isArray(description)">
-          <dd v-for="el in description" :key="el.id" :class="itemClasses">
+          <dd v-for="el in description" :key="el.id" class="[ full-width ]">
             <MoteListItem :list-item="el" />
           </dd>
         </template>
         <template v-else-if="decoration">
-          <dd :class="itemClasses">
+          <dd>
             <MoteListItem :list-item="description" />
           </dd>
         </template>
         <template v-else>
-          <dd :class="itemClasses">
+          <dd>
             <MoteListItem :list-item="description" />
           </dd>
         </template>
@@ -58,7 +58,6 @@ import MoteListItem from './MoteListItem.vue';
 
 const items = inject('items');
 const listClasses = inject('listClasses');
-const itemClasses = inject('itemClasses');
 const termClasses = inject('termClasses');
 const decoration = inject('decoration');
 </script>

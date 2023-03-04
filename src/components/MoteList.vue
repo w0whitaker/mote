@@ -54,7 +54,7 @@ const itemClasses = computed(() => ({
 }));
 
 const termClasses = computed(() => ({
-  [`[ p-start-xs p-end-xs pl-s ]`]: true,
+  [`[ pl-s ]`]: true,
 }));
 
 provide('items', items.value);
