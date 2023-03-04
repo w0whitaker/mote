@@ -33,6 +33,7 @@ const props = defineProps({
 const items = ref(props.items);
 const kind = ref(props.kind);
 const theme = ref(props.theme);
+const decoration = ref(props.decoration);
 
 const renderComponent = computed(() => {
   return kind.value === 'unordered'
@@ -48,8 +49,8 @@ const listClasses = computed(() => ({
 }));
 
 const itemClasses = computed(() => ({
-  [`[ ml-m pb-s pt-s ]`]: true,
-  [`[ inline-block ]`]: true,
+  [`[ pb-s pt-s ]`]: true,
+  [`[ inline-block full-width ]`]: true,
 }));
 
 const termClasses = computed(() => ({
@@ -57,12 +58,8 @@ const termClasses = computed(() => ({
 }));
 
 provide('items', items.value);
-
 provide('listClasses', listClasses);
-
 provide('itemClasses', itemClasses);
-
 provide('termClasses', termClasses);
-
-provide('decoration', props.decoration);
+provide('decoration', decoration.value);
 </script>
