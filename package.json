@@ -8,7 +8,8 @@
     "preview": "vite preview",
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs --fix --ignore-path .gitignore",
     "storybook": "start-storybook --no-open -p 6006",
-    "build-storybook": "build-storybook"
+    "build-storybook": "build-storybook",
+		"chromatic": "npx chromatic --project-token=5b1b75d3eee4"
   },
   "dependencies": {
     "vue": "^3.2.47",
